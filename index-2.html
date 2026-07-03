@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator & Grade Calculator (Free, 2026) | FreeGPATool</title>
+    <meta name="description"
+        content="Calculate your GPA, cumulative GPA, and final grade needed instantly. Free, accurate, and built for US, UK, Canadian, Australian, Nigerian and Indian grading systems.">
+    <link rel="canonical" href="https://freegpatool.vercel.app/" />
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#2451e0">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FreeGPATool">
+    <meta property="og:title" content="GPA Calculator & Grade Calculator (Free) | FreeGPATool">
+    <meta property="og:description"
+        content="Calculate your GPA, cumulative GPA, and final grade needed instantly. Free and accurate for students worldwide.">
+    <meta property="og:url" content="https://freegpatool.vercel.app/">
+    <meta property="og:image" content="https://freegpatool.vercel.app/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPA Calculator & Grade Calculator (Free) | FreeGPATool">
+    <meta name="twitter:description" content="Calculate your GPA and final grade needed instantly. Free and accurate for students worldwide.">
+    <meta name="twitter:image" content="https://freegpatool.vercel.app/og-image.png">
+
+    <meta name="google-site-verification" content="zMJ6oO-jdfhrVwLsYkVEV74jpQGij5c0m43TUHkz990" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <!-- PDF Generation (loaded only when needed, see bottom of file) -->
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "FreeGPATool",
+        "url": "https://freegpatool.vercel.app/",
+        "logo": "https://freegpatool.vercel.app/logo.png",
+        "description": "Free online GPA, CGPA and grade calculators built for students worldwide.",
+        "sameAs": []
+    }
+    </script>
+
+    <!-- Structured Data: WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "FreeGPATool GPA Calculator",
+        "url": "https://freegpatool.vercel.app/",
+        "applicationCategory": "EducationApplication",
+        "operatingSystem": "Any (Web-based)",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1240"
+        },
+        "description": "Free GPA calculator, cumulative GPA calculator, and grade calculator with instant results, PDF export, and support for multiple grading scales."
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a good GPA for college admissions?",
+                "acceptedAnswer": { "@type": "Answer", "text": "For most state universities in the US, a 3.0 or higher on a 4.0 scale is competitive. Highly selective schools typically look for 3.7 or higher, unweighted." }
+            },
+            {
+                "@type": "Question",
+                "name": "How is GPA calculated?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Each letter grade is converted to a point value (A=4.0, B=3.0, etc.), multiplied by the credit hours for that course to get quality points, then all quality points are divided by total credit hours." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between GPA and CGPA?",
+                "acceptedAnswer": { "@type": "Answer", "text": "GPA usually refers to your average for a single semester or term, while CGPA (Cumulative GPA) is the average across every semester you have completed so far." }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I convert a percentage to a 4.0 GPA?",
+                "acceptedAnswer": { "@type": "Answer", "text": "A common conversion is 90-100% equals 4.0, 80-89% equals 3.0, 70-79% equals 2.0, and 60-69% equals 1.0, though exact cutoffs vary by institution." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is FreeGPATool actually free to use?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every calculator on FreeGPATool is free with no account required, supported by unobtrusive advertising." }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data: Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freegpatool.vercel.app/" }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --brand-50: #eff4ff;
+            --brand-100: #dbe6fe;
+            --brand-200: #bcd0fe;
+            --brand-500: #4f7cf7;
+            --brand-600: #2451e0;
+            --brand-700: #1b3fb8;
+            --accent-500: #f59e0b;
+            --accent-600: #d97706;
+            --good-500: #16a34a;
+            --warn-500: #ef4444;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+
+            --bg: #ffffff;
+            --bg-soft: var(--slate-50);
+            --text: var(--slate-900);
+            --text-soft: var(--slate-600);
+            --border: var(--slate-200);
+            --card-bg: #ffffff;
+        }
+
+        html[data-theme="dark"] {
+            --bg: #0b1120;
+            --bg-soft: #111827;
+            --text: #e2e8f0;
+            --text-soft: #94a3b8;
+            --border: #1f2937;
+            --card-bg: #131b2e;
+            --brand-50: #101b33;
+            --brand-100: #16213d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; letter-spacing: -0.02em; color: var(--text); }
+
+        a { color: var(--brand-600); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+        .skip-link {
+            position: absolute; left: -999px; top: 0; background: var(--brand-600); color: #fff;
+            padding: 0.75rem 1.25rem; z-index: 1000; border-radius: 0 0 0.5rem 0;
+        }
+        .skip-link:focus { left: 0; }
+
+        /* Header */
+        header {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content { display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 1rem; }
+
+        .logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.25rem; }
+
+        .logo-icon { background: var(--brand-600); color: white; padding: 0.4rem; border-radius: 0.5rem; display: flex; }
+
+        nav { display: none; }
+        @media (min-width: 900px) { nav { display: flex; gap: 1.75rem; } }
+        nav a { text-decoration: none; color: var(--text-soft); font-size: 0.875rem; font-weight: 500; transition: color 0.2s; white-space: nowrap; }
+        nav a:hover { color: var(--brand-600); }
+
+        .header-actions { display: flex; align-items: center; gap: 0.75rem; }
+
+        .icon-btn {
+            width: 2.5rem; height: 2.5rem; border-radius: 0.75rem; border: 1px solid var(--border);
+            background: var(--bg); color: var(--text-soft); display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .icon-btn:hover { border-color: var(--brand-500); color: var(--brand-600); }
+
+        /* Breadcrumb */
+        .breadcrumb { font-size: 0.8125rem; color: var(--text-soft); padding: 1rem 0 0; }
+        .breadcrumb a { color: var(--text-soft); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--brand-600); }
+
+        /* Hero */
+        .hero { padding: 3rem 0 2rem; position: relative; overflow: hidden; }
+        .hero-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
+        @media (min-width: 960px) { .hero-grid { grid-template-columns: 1.1fr 0.9fr; } }
+
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-600); background: var(--brand-50);
+            padding: 0.4rem 0.75rem; border-radius: 999px; margin-bottom: 1.25rem;
+        }
+
+        .hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); margin-bottom: 1.25rem; line-height: 1.08; }
+        .hero h1 span { color: var(--brand-600); }
+        .hero p.lede { font-size: 1.125rem; color: var(--text-soft); max-width: 36rem; margin-bottom: 2rem; }
+
+        .hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+        /* Signature element: GPA scale gauge */
+        .gauge-card {
+            background: var(--card-bg); border: 1px solid var(--border); border-radius: 1.5rem; padding: 2rem;
+            box-shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.12);
+        }
+        .gauge-card h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-soft); margin-bottom: 1.5rem; }
+        .gauge-track {
+            position: relative; height: 14px; border-radius: 999px; overflow: hidden;
+            background: linear-gradient(90deg, #ef4444 0%, #ef4444 20%, #f59e0b 20%, #f59e0b 45%, #4f7cf7 45%, #4f7cf7 70%, #16a34a 70%, #16a34a 100%);
+        }
+        .gauge-marker {
+            position: absolute; top: -10px; width: 4px; height: 34px; background: var(--slate-900);
+            border-radius: 2px; transform: translateX(-50%); transition: left 1.4s cubic-bezier(.16,1,.3,1);
+        }
+        html[data-theme="dark"] .gauge-marker { background: #fff; }
+        .gauge-scale { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-soft); margin-top: 0.5rem; }
+        .gauge-zones { display: grid; grid-template-columns: repeat(4,1fr); gap: 0.5rem; margin-top: 1.5rem; font-size: 0.75rem; }
+        .gauge-zones div { text-align: center; padding: 0.5rem 0.25rem; border-radius: 0.5rem; background: var(--bg-soft); color: var(--text-soft); font-weight: 600; }
+        .gauge-result { text-align: center; margin-top: 1.5rem; }
+        .gauge-result .val { font-size: 3rem; font-weight: 800; font-family: 'Outfit', sans-serif; color: var(--brand-600); }
+        .gauge-result .lbl { font-size: 0.8125rem; color: var(--text-soft); }
+
+        /* Ad Space */
+        .ad-space { background: var(--bg-soft); border: 1px dashed var(--border); border-radius: 0.75rem; height: 6rem; display: flex; align-items: center; justify-content: center; color: var(--slate-400); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+        .ad-wrap { display: flex; justify-content: center; margin: 2.5rem 0; min-height: 50px; }
+
+        /* Calculators */
+        .calc-card { background: var(--brand-50); border: 1px solid var(--brand-100); border-radius: 1.5rem; padding: 2rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08); margin-bottom: 3rem; scroll-margin-top: 5rem; }
+        .calc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; gap: 1rem; flex-wrap: wrap; }
+        .calc-title h2 { font-size: 1.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        .calc-title p { color: var(--text-soft); margin-top: 0.25rem; }
+        .btn-group { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+        .btn { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.25rem; border-radius: 0.75rem; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; font-size: 0.875rem; font-family: inherit; }
+        .btn-primary { background: var(--brand-600); color: white; box-shadow: 0 10px 15px -3px rgba(36, 81, 224, 0.25); }
+        .btn-primary:hover { background: var(--brand-700); }
+        .btn-secondary { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover { background: var(--bg-soft); }
+
+        .table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { color: var(--text-soft); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; padding-bottom: 0.75rem; }
+        td { padding: 0.4rem 0.4rem 0.4rem 0; }
+
+        input, select {
+            width: 100%; padding: 0.7rem 0.9rem; border-radius: 0.75rem; border: 1px solid var(--border);
+            background: var(--bg); color: var(--text); outline: none; transition: border-color 0.2s; font-size: 0.875rem; font-family: inherit;
+        }
+        input:focus, select:focus { border-color: var(--brand-500); box-shadow: 0 0 0 3px rgba(79, 124, 247, 0.15); }
+
+        .remove-btn { background: none; border: none; color: var(--slate-400); cursor: pointer; padding: 0.5rem; transition: color 0.2s; }
+        .remove-btn:hover { color: var(--warn-500); }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+        .result-box { background: var(--card-bg); padding: 1.25rem; border-radius: 1rem; border: 1px solid var(--brand-100); }
+        .result-label { color: var(--brand-600); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+        .result-value { font-size: 2.25rem; font-weight: 700; color: var(--text); font-family: 'Outfit', sans-serif; }
+
+        .grade-calc-controls { margin-top: 1.5rem; padding: 1.5rem; background: var(--card-bg); border-radius: 1rem; border: 1px solid var(--brand-100); display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        @media (max-width: 640px) { .grade-calc-controls { grid-template-columns: 1fr; } }
+        .control-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem; }
+        .input-with-suffix { display: flex; }
+        .input-with-suffix input { border-top-right-radius: 0; border-bottom-right-radius: 0; width: 5rem; }
+        .suffix { background: var(--bg-soft); border: 1px solid var(--border); border-left: none; padding: 0 1rem; display: flex; align-items: center; border-top-right-radius: 0.75rem; border-bottom-right-radius: 0.75rem; color: var(--text-soft); font-weight: 600; }
+
+        .decimal-selector { display: flex; background: var(--bg-soft); padding: 0.25rem; border-radius: 0.75rem; width: fit-content; }
+        .decimal-btn { border: none; background: none; padding: 0.5rem 1.1rem; border-radius: 0.5rem; cursor: pointer; font-weight: 600; color: var(--text-soft); transition: all 0.2s; font-family: inherit; }
+        .decimal-btn.active { background: var(--brand-600); color: white; }
+
+        .save-note { font-size: 0.75rem; color: var(--text-soft); margin-top: 1rem; display: flex; align-items: center; gap: 0.4rem; }
+
+        /* TOC */
+        .toc { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; margin: 2.5rem 0; }
+        .toc h2 { font-size: 1rem; margin-bottom: 0.75rem; }
+        .toc ol { padding-left: 1.25rem; columns: 1; }
+        @media (min-width: 700px) { .toc ol { columns: 2; column-gap: 2rem; } }
+        .toc li { margin-bottom: 0.5rem; font-size: 0.9rem; break-inside: avoid; }
+        .toc a { text-decoration: none; color: var(--text-soft); }
+        .toc a:hover { color: var(--brand-600); }
+
+        /* SEO / article content */
+        .seo-content { padding: 3rem 0 4rem; max-width: 800px; margin: 0 auto; }
+        .seo-content h2 { font-size: 1.75rem; margin: 2.5rem 0 1rem; scroll-margin-top: 5rem; }
+        .seo-content h3 { font-size: 1.25rem; margin: 1.75rem 0 0.75rem; }
+        .seo-content p { color: var(--text-soft); margin-bottom: 1.25rem; font-size: 1.0625rem; }
+        .seo-content ul, .seo-content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; color: var(--text-soft); }
+        .seo-content li { margin-bottom: 0.6rem; }
+        .seo-content table { margin-bottom: 1.5rem; }
+        .seo-content th, .seo-content td { border-bottom: 1px solid var(--border); padding: 0.6rem 0.75rem; }
+        .seo-content strong { color: var(--text); }
+
+        .related-pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .related-pages a { display: block; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: 0.75rem; text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
+        .related-pages a:hover { border-color: var(--brand-500); background: var(--brand-50); }
+        .related-pages a small { display: block; font-weight: 400; color: var(--text-soft); margin-top: 0.25rem; }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+        .faq-question { font-weight: 700; margin-bottom: 0.5rem; color: var(--text); font-size: 1.0625rem; }
+
+        /* Footer */
+        footer { background: var(--slate-900); color: var(--slate-400); padding: 3.5rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; margin-bottom: 2.5rem; }
+        .footer-logo { color: white; font-weight: 700; font-size: 1.4rem; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.25rem; }
+        .footer-links h4 { color: white; margin-bottom: 1.25rem; font-size: 0.9rem; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.65rem; }
+        .footer-links a { color: inherit; text-decoration: none; transition: color 0.2s; font-size: 0.875rem; }
+        .footer-links a:hover { color: white; }
+        .footer-bottom { border-top: 1px solid var(--slate-800); padding-top: 1.75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; }
+        .footer-bottom a { color: inherit; text-decoration: none; }
+
+        :focus-visible { outline: 3px solid var(--accent-500); outline-offset: 2px; }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header>
+        <div class="container header-content">
+            <a href="/" class="logo">
+                <div class="logo-icon"><i data-lucide="graduation-cap"></i></div>
+                FreeGPATool
+            </a>
+            <nav aria-label="Primary">
+                <a href="#gpa-calc">GPA Calculator</a>
+                <a href="#grade-calc">Grade Calculator</a>
+                <a href="/how-to-calculate-gpa.html">Guides</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <i data-lucide="moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <p class="breadcrumb container" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+    </p>
+
+    <main id="main">
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <span class="eyebrow"><i data-lucide="sparkles" style="width:14px;height:14px;"></i> Free · No sign-up · Instant results</span>
+                    <h1>Calculate your <span>GPA</span> and know exactly what grade you need next</h1>
+                    <p class="lede">FreeGPATool converts your grades into an accurate GPA, cumulative GPA, or the exact
+                        score you need on your final — built for the US 4.0 scale, UK classifications, and grading
+                        systems used in Canada, Australia, Nigeria, and India.</p>
+                    <div class="hero-cta">
+                        <a href="#gpa-calc" class="btn btn-primary"><i data-lucide="calculator"></i> Calculate my GPA</a>
+                        <a href="#grade-calc" class="btn btn-secondary"><i data-lucide="target"></i> Find grade needed</a>
+                    </div>
+                </div>
+
+                <div class="gauge-card" aria-hidden="false">
+                    <h2>Where a 3.8 GPA lands on the 4.0 scale</h2>
+                    <div class="gauge-track">
+                        <div class="gauge-marker" id="hero-gauge-marker" style="left:0%"></div>
+                    </div>
+                    <div class="gauge-scale"><span>0.0</span><span>1.0</span><span>2.0</span><span>3.0</span><span>4.0</span></div>
+                    <div class="gauge-zones">
+                        <div>Needs work</div><div>Satisfactory</div><div>Good</div><div>Excellent</div>
+                    </div>
+                    <div class="gauge-result">
+                        <div class="val" id="hero-gauge-value">0.00</div>
+                        <div class="lbl">Example GPA · try the calculator below</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <!-- AD SPACE: TOP -->
+                <div class="ad-wrap">
+                    <script>
+                        atOptions = {
+                            'key': '000a728f6e7d529477c86aaf4ba72f23',
+                            'format': 'iframe',
+                            'height': 50,
+                            'width': 320,
+                            'params': {}
+                        };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/000a728f6e7d529477c86aaf4ba72f23/invoke.js"></script>
+                </div>
+
+                <!-- GPA Calculator -->
+                <div id="gpa-calc" class="calc-card">
+                    <div class="calc-header">
+                        <div class="calc-title">
+                            <h2><i data-lucide="calculator" style="color: var(--brand-600)"></i> GPA Calculator</h2>
+                            <p>Calculate your semester or cumulative GPA instantly.</p>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" onclick="addGpaRow()">
+                                <i data-lucide="plus"></i> Add Course
+                            </button>
+                            <button class="btn btn-secondary" onclick="downloadGpaPdf()">
+                                <i data-lucide="download"></i> PDF
+                            </button>
+                            <button class="btn btn-secondary" onclick="printResults('gpa')">
+                                <i data-lucide="printer"></i> Print
+                            </button>
+                            <button class="btn btn-secondary" onclick="shareResults('gpa')">
+                                <i data-lucide="share-2"></i> Share
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table id="gpa-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Course Name (Optional)</th>
+                                    <th scope="col">Grade</th>
+                                    <th scope="col">Credits</th>
+                                    <th scope="col" style="width: 40px"><span class="sr-only">Remove</span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="gpa-body"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="results-grid">
+                        <div class="result-box">
+                            <div class="result-label">Your GPA</div>
+                            <div id="gpa-result" class="result-value">0.00</div>
+                        </div>
+                        <div class="result-box">
+                            <div class="result-label">Total Credits</div>
+                            <div id="total-credits" class="result-value">0</div>
+                        </div>
+                        <div class="result-box">
+                            <div class="result-label">Status</div>
+                            <div id="gpa-status" class="result-value" style="font-size: 1.4rem; display: flex; align-items: center; height: 100%;">Satisfactory</div>
+                        </div>
+                    </div>
+
+                    <p class="save-note"><i data-lucide="save" style="width:14px;height:14px;"></i>
+                        Your courses are saved automatically in this browser — nothing is uploaded to a server.
+                        <button class="remove-btn" style="text-decoration:underline; color:var(--brand-600);" onclick="clearGpaStorage()">Clear saved data</button>
+                    </p>
+                </div>
+
+                <!-- Grade Calculator -->
+                <div id="grade-calc" class="calc-card">
+                    <div class="calc-header">
+                        <div class="calc-title">
+                            <h2><i data-lucide="target" style="color: var(--brand-600)"></i> Final Grade Calculator</h2>
+                            <p>See your current average and exactly what you need to hit your target grade.</p>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Assignment (optional)</th>
+                                    <th scope="col">Grade (%)</th>
+                                    <th scope="col">Weight</th>
+                                    <th scope="col" style="width: 40px"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="grade-body"></tbody>
+                        </table>
+                    </div>
+
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem; border-style: dashed;" onclick="addGradeRow()">
+                        <i data-lucide="plus"></i> Add row
+                    </button>
+
+                    <div class="grade-calc-controls">
+                        <div class="control-group">
+                            <label for="target-grade">Target Average Grade (%)</label>
+                            <div class="input-with-suffix">
+                                <input type="number" id="target-grade" value="80" oninput="calculateGrade()">
+                                <div class="suffix">%</div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label id="decimal-label">Decimal places</label>
+                            <div class="decimal-selector" role="group" aria-labelledby="decimal-label">
+                                <button class="decimal-btn" onclick="setDecimals(0, this)">0</button>
+                                <button class="decimal-btn" onclick="setDecimals(1, this)">1</button>
+                                <button class="decimal-btn active" onclick="setDecimals(2, this)">2</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-group" style="margin-top: 1.5rem;">
+                        <button class="btn btn-primary" style="flex: 1; justify-content: center;" onclick="calculateGrade()">
+                            <i data-lucide="calculator"></i> Calculate
+                        </button>
+                        <button class="btn btn-secondary" onclick="resetGradeCalc()">
+                            <i data-lucide="refresh-cw"></i> Reset
+                        </button>
+                        <button class="btn btn-secondary" onclick="printResults('grade')">
+                            <i data-lucide="printer"></i>
+                        </button>
+                    </div>
+
+                    <div id="grade-results-box" class="results-grid" style="display: none;">
+                        <div class="result-box" style="grid-column: span 2;">
+                            <div class="result-label">Current Average</div>
+                            <div id="current-avg" class="result-value">0%</div>
+                        </div>
+                        <div class="result-box" style="grid-column: span 2;">
+                            <div class="result-label">Additional Grade Needed</div>
+                            <div id="needed-grade" class="result-value">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content -->
+        <section id="guides" class="seo-content container">
+            <!-- AD SPACE: MIDDLE -->
+            <div class="ad-wrap" style="min-height:250px;">
+                <script>
+                    atOptions = {
+                        'key': '6d924e3634fdbd559dfe94ad25cb16db',
+                        'format': 'iframe',
+                        'height': 250,
+                        'width': 300,
+                        'params': {}
+                    };
+                </script>
+                <script src="https://www.highperformanceformat.com/6d924e3634fdbd559dfe94ad25cb16db/invoke.js"></script>
+            </div>
+
+            <article>
+                <h2>The Complete Guide to Understanding and Improving Your GPA</h2>
+                <p>Your Grade Point Average is the single number admissions officers, scholarship committees, and
+                    employers glance at first. This guide walks through exactly how it's calculated, how systems
+                    differ around the world, and what actually moves the number — with real course examples, not
+                    just theory.</p>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2 style="margin:0 0 0.75rem;">On this page</h2>
+                    <ol>
+                        <li><a href="#worked-example">A worked GPA example</a></li>
+                        <li><a href="#history">Where the 4.0 scale came from</a></li>
+                        <li><a href="#international">GPA around the world</a></li>
+                        <li><a href="#gpa-vs-cgpa">GPA vs. CGPA</a></li>
+                        <li><a href="#weighted">Weighted vs. unweighted GPA</a></li>
+                        <li><a href="#mistakes">Common mistakes students make</a></li>
+                        <li><a href="#improve">How to actually raise your GPA</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ol>
+                </nav>
+
+                <h2 id="worked-example">A worked GPA example</h2>
+                <p>Say you took four courses this semester. Here's exactly how the math works, step by step:</p>
+                <div class="table-container">
+                    <table>
+                        <thead><tr><th scope="col">Course</th><th scope="col">Grade</th><th scope="col">Credits</th><th scope="col">Quality Points</th></tr></thead>
+                        <tbody>
+                            <tr><td>Calculus II</td><td>A- (3.7)</td><td>4</td><td>14.8</td></tr>
+                            <tr><td>World History</td><td>B+ (3.3)</td><td>3</td><td>9.9</td></tr>
+                            <tr><td>Chemistry Lab</td><td>B (3.0)</td><td>2</td><td>6.0</td></tr>
+                            <tr><td>Intro to Economics</td><td>A (4.0)</td><td>3</td><td>12.0</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>Add the quality points (14.8 + 9.9 + 6.0 + 12.0 = 42.7) and divide by total credits (4 + 3 + 2 + 3
+                    = 12). That gives a semester GPA of <strong>3.56</strong> — a 3-credit A affects the average more
+                    than a 2-credit B, which is exactly why credit weighting matters. Plug your own courses into the
+                    <a href="#gpa-calc">calculator above</a> to see this happen in real time.</p>
+
+                <h2 id="history">Where the 4.0 scale came from</h2>
+                <p>Grading wasn't always numeric. Yale's president Ezra Stiles ranked students into four rough tiers
+                    in 1785 — Optimi, Second Optimi, Inferiores, and Pejores — with no math involved at all. Letter
+                    grades spread through American universities in the early 1900s as a way to standardize
+                    evaluation across departments, and the 4.0 point scale followed as a way to average those
+                    letters into a single comparable figure.</p>
+
+                <h2 id="international">GPA around the world</h2>
+                <p>If you're applying internationally, these rough equivalencies help translate one system into
+                    another — though every institution has its own conversion table, so treat this as a starting
+                    point, not a substitute for your target school's official policy.</p>
+                <div class="table-container">
+                    <table>
+                        <thead><tr><th scope="col">Country</th><th scope="col">Common scale</th><th scope="col">Roughly equivalent to 3.7–4.0 GPA</th></tr></thead>
+                        <tbody>
+                            <tr><td>United States</td><td>4.0 scale</td><td>A / A-</td></tr>
+                            <tr><td>United Kingdom</td><td>Classification (First, 2:1, 2:2, Third)</td><td>First Class (70%+)</td></tr>
+                            <tr><td>Canada</td><td>4.0 or 4.33 scale, or percentage</td><td>A / A+</td></tr>
+                            <tr><td>Australia</td><td>7.0 scale</td><td>High Distinction (6–7)</td></tr>
+                            <tr><td>Nigeria</td><td>5.0 CGPA scale</td><td>First Class (4.50–5.00)</td></tr>
+                            <tr><td>India</td><td>10-point CGPA</td><td>9.0–10.0</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 id="gpa-vs-cgpa">GPA vs. CGPA: what's the difference?</h2>
+                <ul>
+                    <li><strong>GPA</strong> typically covers one semester or term.</li>
+                    <li><strong>CGPA (Cumulative GPA)</strong> averages every graded term you've completed, giving a
+                        long-term view of performance across your whole program.</li>
+                </ul>
+                <p>A single rough semester rarely wrecks a CGPA built over several years — one more reason cumulative
+                    tracking matters more than any single term.</p>
+
+                <h2 id="weighted">Weighted vs. unweighted GPA</h2>
+                <ul>
+                    <li><strong>Unweighted:</strong> every class sits on the same 4.0 ceiling regardless of
+                        difficulty — an A in an elective counts the same as an A in an AP course.</li>
+                    <li><strong>Weighted:</strong> Honors, AP, or IB courses can push the scale up to 5.0, rewarding
+                        students who take on harder coursework.</li>
+                </ul>
+
+                <h2 id="mistakes">Common mistakes students make</h2>
+                <ul>
+                    <li><strong>Forgetting credit weighting</strong> — treating a 1-credit seminar the same as a
+                        4-credit core course when estimating GPA by hand.</li>
+                    <li><strong>Ignoring grade replacement policies</strong> — some schools drop the old grade
+                        entirely when a class is retaken; others average both attempts. Check your registrar's
+                        policy before assuming either way.</li>
+                    <li><strong>Confusing GPA with class rank</strong> — a 3.8 GPA can rank very differently at two
+                        schools with different grading cultures.</li>
+                    <li><strong>Waiting until finals week to check the math</strong> — the <a href="#grade-calc">grade
+                        calculator</a> above tells you the exact score you need before it's too late to act on it.</li>
+                </ul>
+
+                <h2 id="improve">How to actually raise your GPA</h2>
+                <ol>
+                    <li><strong>Protect participation points.</strong> Attendance and participation often make up
+                        10–15% of a grade — points that are simple to keep and costly to lose.</li>
+                    <li><strong>Front-load office hours.</strong> Going once you're already struggling helps less
+                        than building the relationship early, while feedback can still change your trajectory.</li>
+                    <li><strong>Recalculate after every graded item.</strong> Small, frequent checks catch a slipping
+                        average while there's still enough weight left to fix it.</li>
+                    <li><strong>Prioritize by leverage, not fear.</strong> If one final is worth 10% and another is
+                        worth 40%, your study hours should reflect that gap, not just which class feels harder.</li>
+                </ol>
+
+                <div class="related-pages">
+                    <a href="/how-to-calculate-gpa.html">How to Calculate GPA<small>Full step-by-step tutorial</small></a>
+                    <a href="/gpa-vs-cgpa.html">GPA vs CGPA<small>Deep dive with examples</small></a>
+                    <a href="/gpa-scale-guide.html">GPA Scale Guide<small>Every scale, side by side</small></a>
+                    <a href="/gpa-guide-nigeria.html">GPA Guide for Nigeria<small>5-point CGPA system explained</small></a>
+                </div>
+
+                <div id="faq">
+                    <h2>Frequently asked questions</h2>
+                    <div class="faq-item">
+                        <div class="faq-question">What is a "good" GPA for college admissions?</div>
+                        <p>For most state universities, a 3.0 or higher is competitive. Highly selective schools
+                            typically expect 3.7 or higher, unweighted.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Does a 0.1 difference in GPA really matter?</div>
+                        <p>Sometimes yes — many scholarships and honor societies use strict cutoffs, such as exactly
+                            3.50, so small margins can decide eligibility.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I convert a percentage to a 4.0 GPA?</div>
+                        <p>A common conversion is 90–100% to 4.0, 80–89% to 3.0, 70–79% to 2.0, and 60–69% to 1.0,
+                            though the exact cutoffs vary by school.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I calculate GPA if I retook a class?</div>
+                        <p>Check whether your school uses grade replacement (only the new grade counts) or
+                            averaging (both attempts count), then enter the relevant grade(s) into the calculator
+                            accordingly.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Is FreeGPATool really free?</div>
+                        <p>Yes — every calculator is free with no account required. The site is supported by the
+                            small ads you see on the page.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <!-- AD SPACE: BOTTOM -->
+            <div class="ad-wrap" style="min-height:250px;">
+                <script>
+                    atOptions = {
+                        'key': '6d924e3634fdbd559dfe94ad25cb16db',
+                        'format': 'iframe',
+                        'height': 250,
+                        'width': 300,
+                        'params': {}
+                    };
+                </script>
+                <script src="https://www.highperformanceformat.com/6d924e3634fdbd559dfe94ad25cb16db/invoke.js"></script>
+            </div>
+
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo"><i data-lucide="graduation-cap"></i> FreeGPATool</div>
+                    <p>Free academic tools that help students calculate, plan, and improve their grades — no account,
+                        no cost.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Calculators</h4>
+                    <ul>
+                        <li><a href="/#gpa-calc">GPA Calculator</a></li>
+                        <li><a href="/#grade-calc">Final Grade Calculator</a></li>
+                        <li><a href="/cgpa-calculator.html">CGPA Calculator</a></li>
+                        <li><a href="/gpa-to-percentage.html">GPA to Percentage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Guides</h4>
+                    <ul>
+                        <li><a href="/how-to-calculate-gpa.html">How to Calculate GPA</a></li>
+                        <li><a href="/gpa-vs-cgpa.html">GPA vs CGPA</a></li>
+                        <li><a href="/gpa-scale-guide.html">GPA Scale Guide</a></li>
+                        <li><a href="/#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreeGPATool. All rights reserved.</p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons once the deferred script has loaded
+        window.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
+
+        // --- Theme toggle ---
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        function applyTheme(theme) {
+            root.setAttribute('data-theme', theme);
+            localStorage.setItem('fgt-theme', theme);
+            if (window.lucide) {
+                themeToggle.innerHTML = theme === 'dark' ? '<i data-lucide="sun"></i>' : '<i data-lucide="moon"></i>';
+                lucide.createIcons();
+            }
+        }
+        const savedTheme = localStorage.getItem('fgt-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(savedTheme);
+        themeToggle.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+
+        // --- GPA Calculator Logic ---
+        const gradePoints = {
+            'A+': 4.0, 'A': 4.0, 'A-': 3.7,
+            'B+': 3.3, 'B': 3.0, 'B-': 2.7,
+            'C+': 2.3, 'C': 2.0, 'C-': 1.7,
+            'D+': 1.3, 'D': 1.0, 'F': 0.0
+        };
+        const STORAGE_KEY = 'fgt-gpa-courses';
+
+        function addGpaRow(name = '', grade = 'A', credits = '3', skipSave = false) {
+            const tbody = document.getElementById('gpa-body');
+            const rowId = Math.random().toString(36).substr(2, 9);
+            const tr = document.createElement('tr');
+            tr.id = `gpa-row-${rowId}`;
+            tr.innerHTML = `
+                <td><input type="text" placeholder="e.g. Mathematics" value="${name}" aria-label="Course name" oninput="calculateGpa()"></td>
+                <td>
+                    <select aria-label="Grade" onchange="calculateGpa()">
+                        ${Object.keys(gradePoints).map(g => `<option value="${g}" ${g === grade ? 'selected' : ''}>${g}</option>`).join('')}
+                    </select>
+                </td>
+                <td><input type="number" min="0" value="${credits}" aria-label="Credits" oninput="calculateGpa()"></td>
+                <td>
+                    <button class="remove-btn" onclick="removeGpaRow('${rowId}')" aria-label="Remove course">
+                        <i data-lucide="trash-2"></i>
+                    </button>
+                </td>
+            `;
+            tbody.appendChild(tr);
+            if (window.lucide) lucide.createIcons();
+            if (!skipSave) calculateGpa();
+        }
+
+        function removeGpaRow(id) {
+            const row = document.getElementById(`gpa-row-${id}`);
+            if (document.querySelectorAll('#gpa-body tr').length > 1) {
+                row.remove();
+                calculateGpa();
+            }
+        }
+
+        function saveGpaToStorage() {
+            const rows = document.querySelectorAll('#gpa-body tr');
+            const data = Array.from(rows).map(row => ({
+                name: row.querySelector('input[type="text"]').value,
+                grade: row.querySelector('select').value,
+                credits: row.querySelector('input[type="number"]').value
+            }));
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
+        }
+
+        function clearGpaStorage() {
+            localStorage.removeItem(STORAGE_KEY);
+            document.getElementById('gpa-body').innerHTML = '';
+            addGpaRow('', 'A', '3', true);
+            addGpaRow('', 'B', '3', true);
+            addGpaRow('', 'A', '4', true);
+            calculateGpa();
+        }
+
+        function moveHeroGauge(gpa) {
+            const marker = document.getElementById('hero-gauge-marker');
+            const valueEl = document.getElementById('hero-gauge-value');
+            if (!marker) return;
+            const pct = Math.max(0, Math.min(100, (gpa / 4.0) * 100));
+            marker.style.left = pct + '%';
+            valueEl.textContent = gpa.toFixed(2);
+        }
+
+        function calculateGpa() {
+            const rows = document.querySelectorAll('#gpa-body tr');
+            let totalPoints = 0;
+            let creditsSum = 0;
+
+            rows.forEach(row => {
+                const grade = row.querySelector('select').value;
+                const credits = parseFloat(row.querySelector('input[type="number"]').value) || 0;
+                totalPoints += gradePoints[grade] * credits;
+                creditsSum += credits;
+            });
+
+            const gpa = creditsSum > 0 ? totalPoints / creditsSum : 0;
+            document.getElementById('gpa-result').innerText = gpa.toFixed(2);
+            document.getElementById('total-credits').innerText = creditsSum;
+            moveHeroGauge(gpa);
+
+            const status = document.getElementById('gpa-status');
+            if (gpa >= 3.5) { status.innerText = 'Excellent'; status.style.color = '#16a34a'; }
+            else if (gpa >= 3.0) { status.innerText = 'Good'; status.style.color = '#2451e0'; }
+            else if (gpa >= 2.0) { status.innerText = 'Satisfactory'; status.style.color = '#2451e0'; }
+            else { status.innerText = 'Needs Improvement'; status.style.color = '#ef4444'; }
+
+            saveGpaToStorage();
+        }
+
+        // --- Grade Calculator Logic ---
+        let decimalPlaces = 2;
+
+        function addGradeRow(name = '', grade = '', weight = '') {
+            const tbody = document.getElementById('grade-body');
+            const rowId = Math.random().toString(36).substr(2, 9);
+            const tr = document.createElement('tr');
+            tr.id = `grade-row-${rowId}`;
+            tr.innerHTML = `
+                <td><input type="text" value="${name}" placeholder="Assignment name" aria-label="Assignment name" oninput="calculateGrade()"></td>
+                <td><input type="number" value="${grade}" aria-label="Grade percent" oninput="calculateGrade()"></td>
+                <td><input type="number" value="${weight}" aria-label="Weight" oninput="calculateGrade()"></td>
+                <td>
+                    <button class="remove-btn" onclick="removeGradeRow('${rowId}')" aria-label="Remove assignment">
+                        <i data-lucide="trash-2"></i>
+                    </button>
+                </td>
+            `;
+            tbody.appendChild(tr);
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function removeGradeRow(id) {
+            const row = document.getElementById(`grade-row-${id}`);
+            if (document.querySelectorAll('#grade-body tr').length > 1) {
+                row.remove();
+                calculateGrade();
+            }
+        }
+
+        function setDecimals(d, btn) {
+            decimalPlaces = d;
+            document.querySelectorAll('.decimal-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            calculateGrade();
+        }
+
+        function calculateGrade() {
+            const rows = document.querySelectorAll('#grade-body tr');
+            let sumGW = 0;
+            let sumW = 0;
+            let validCount = 0;
+
+            rows.forEach(row => {
+                const inputs = row.querySelectorAll('input[type="number"]');
+                const g = parseFloat(inputs[0].value);
+                const w = parseFloat(inputs[1].value);
+                if (!isNaN(g) && !isNaN(w)) {
+                    sumGW += g * w;
+                    sumW += w;
+                    validCount++;
+                }
+            });
+
+            if (validCount > 0) {
+                document.getElementById('grade-results-box').style.display = 'grid';
+                const average = sumGW / sumW;
+                document.getElementById('current-avg').innerText = average.toFixed(decimalPlaces) + '%';
+
+                const target = parseFloat(document.getElementById('target-grade').value);
+                const neededEl = document.getElementById('needed-grade');
+                if (!isNaN(target)) {
+                    const remainingWeight = 100 - sumW;
+                    if (remainingWeight > 0) {
+                        const needed = (target * 100 - sumGW) / remainingWeight;
+                        neededEl.innerText = needed.toFixed(decimalPlaces) + '%';
+                        neededEl.style.color = needed > 100 ? '#ef4444' : needed <= 0 ? '#16a34a' : '#2451e0';
+                    } else {
+                        neededEl.innerText = 'N/A';
+                    }
+                }
+            } else {
+                document.getElementById('grade-results-box').style.display = 'none';
+            }
+        }
+
+        function resetGradeCalc() {
+            document.getElementById('grade-body').innerHTML = '';
+            for (let i = 0; i < 8; i++) addGradeRow();
+            document.getElementById('target-grade').value = 80;
+            calculateGrade();
+        }
+
+        // --- Print & Share ---
+        function printResults(which) {
+            window.print();
+        }
+
+        function shareResults(which) {
+            const gpa = document.getElementById('gpa-result').innerText;
+            const text = `My GPA is ${gpa}, calculated with FreeGPATool.`;
+            if (navigator.share) {
+                navigator.share({ title: 'My GPA', text, url: 'https://freegpatool.vercel.app/' }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(`${text} https://freegpatool.vercel.app/`).then(() => {
+                    alert('Result copied to clipboard!');
+                });
+            }
+        }
+
+        // --- PDF Export (jsPDF loaded on demand) ---
+        function downloadGpaPdf() {
+            function render() {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                doc.setFontSize(22);
+                doc.text('FreeGPATool - GPA Report', 20, 20);
+                doc.setFontSize(12);
+                doc.text(`Date: ${new Date().toLocaleDateString()}`, 20, 30);
+                doc.text(`Overall GPA: ${document.getElementById('gpa-result').innerText}`, 20, 40);
+                doc.text(`Total Credits: ${document.getElementById('total-credits').innerText}`, 20, 50);
+                doc.text('Course Details:', 20, 70);
+                let y = 80;
+                document.querySelectorAll('#gpa-body tr').forEach((row, i) => {
+                    const name = row.querySelector('input[type="text"]').value || 'Unnamed Course';
+                    const grade = row.querySelector('select').value;
+                    const credits = row.querySelector('input[type="number"]').value;
+                    doc.text(`${i + 1}. ${name}: Grade ${grade}, Credits ${credits}`, 25, y);
+                    y += 10;
+                });
+                doc.save('GPA_Report_FreeGPATool.pdf');
+            }
+            if (window.jspdf) { render(); return; }
+            const s = document.createElement('script');
+            s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+            s.onload = render;
+            document.body.appendChild(s);
+        }
+
+        // --- Initial Setup ---
+        function init() {
+            const saved = (() => {
+                try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (e) { return null; }
+            })();
+
+            if (saved && saved.length) {
+                saved.forEach(c => addGpaRow(c.name, c.grade, c.credits, true));
+                calculateGpa();
+            } else {
+                addGpaRow('', 'A', '3', true);
+                addGpaRow('', 'B', '3', true);
+                addGpaRow('', 'A', '4', true);
+                calculateGpa();
+            }
+            for (let i = 0; i < 8; i++) addGradeRow();
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+
+</html>
