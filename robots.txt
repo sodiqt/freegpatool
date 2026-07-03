@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://freegpatool.vercel.app/sitemap.xml
