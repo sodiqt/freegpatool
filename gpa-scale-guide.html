@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Scale Guide: Every Grading Scale Compared | FreeGPATool</title>
+    <meta name="description"
+        content="Compare the US 4.0 scale, UK classifications, Canada's 4.33 scale, Australia's 7-point scale, Nigeria's 5-point CGPA, and India's 10-point CGPA — side by side.">
+    <link rel="canonical" href="https://freegpatool.vercel.app/gpa-scale-guide.html" />
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#2451e0">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="FreeGPATool">
+    <meta property="og:title" content="GPA Scale Guide: Every Grading Scale Compared">
+    <meta property="og:description" content="Compare grading scales from the US, UK, Canada, Australia, Nigeria, and India, side by side.">
+    <meta property="og:url" content="https://freegpatool.vercel.app/gpa-scale-guide.html">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPA Scale Guide: Every Grading Scale Compared">
+    <meta name="twitter:description" content="Compare grading scales from the US, UK, Canada, Australia, Nigeria, and India, side by side.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freegpatool.vercel.app/" },
+            { "@type": "ListItem", "position": 2, "name": "GPA Scale Guide", "item": "https://freegpatool.vercel.app/gpa-scale-guide.html" }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "Why do grading scales differ by country?", "acceptedAnswer": { "@type": "Answer", "text": "Grading scales developed independently within each country's education system, often shaped by different historical university traditions, so there is no single global standard." } },
+            { "@type": "Question", "name": "How do I convert my GPA for a foreign university application?", "acceptedAnswer": { "@type": "Answer", "text": "Use the destination university's official conversion table when available, since institutions often publish their own equivalency guidance for applicants from other grading systems." } }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --brand-50: #eff4ff; --brand-100: #dbe6fe; --brand-500: #4f7cf7; --brand-600: #2451e0; --brand-700: #1b3fb8;
+            --good-500: #16a34a; --warn-500: #ef4444;
+            --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0; --slate-400: #94a3b8;
+            --slate-600: #475569; --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a;
+            --bg: #ffffff; --bg-soft: var(--slate-50); --text: var(--slate-900); --text-soft: var(--slate-600); --border: var(--slate-200); --card-bg: #fff;
+        }
+        html[data-theme="dark"] { --bg:#0b1120; --bg-soft:#111827; --text:#e2e8f0; --text-soft:#94a3b8; --border:#1f2937; --card-bg:#131b2e; --brand-50:#101b33; --brand-100:#16213d; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; letter-spacing: -0.02em; color: var(--text); }
+        a { color: var(--brand-600); }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+        .skip-link { position: absolute; left: -999px; top: 0; background: var(--brand-600); color: #fff; padding: 0.75rem 1.25rem; z-index: 1000; }
+        .skip-link:focus { left: 0; }
+        header { background: var(--bg); border-bottom: 1px solid var(--border); height: 4rem; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .header-content { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.25rem; }
+        .logo-icon { background: var(--brand-600); color: white; padding: 0.4rem; border-radius: 0.5rem; display: flex; }
+        nav { display: none; }
+        @media (min-width: 900px) { nav { display: flex; gap: 1.75rem; } }
+        nav a { text-decoration: none; color: var(--text-soft); font-size: 0.875rem; font-weight: 500; }
+        nav a:hover { color: var(--brand-600); }
+        .icon-btn { width: 2.5rem; height: 2.5rem; border-radius: 0.75rem; border: 1px solid var(--border); background: var(--bg); color: var(--text-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .breadcrumb { font-size: 0.8125rem; color: var(--text-soft); padding: 1.25rem 0 0; }
+        .breadcrumb a { color: var(--text-soft); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--brand-600); }
+        article { padding: 1.5rem 0 4rem; }
+        h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); margin: 1rem 0 1rem; line-height: 1.15; }
+        .lede { font-size: 1.125rem; color: var(--text-soft); margin-bottom: 2rem; }
+        h2 { font-size: 1.6rem; margin: 2.25rem 0 1rem; scroll-margin-top: 5rem; }
+        h3 { font-size: 1.2rem; margin: 1.5rem 0 0.75rem; }
+        p { color: var(--text-soft); margin-bottom: 1.15rem; font-size: 1.0625rem; }
+        ul, ol { margin-bottom: 1.15rem; padding-left: 1.5rem; color: var(--text-soft); }
+        li { margin-bottom: 0.55rem; }
+        strong { color: var(--text); }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        th, td { text-align: left; border-bottom: 1px solid var(--border); padding: 0.6rem 0.75rem; font-size: 0.95rem; }
+        th { color: var(--text-soft); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .toc { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; margin: 2rem 0; }
+        .toc h2 { font-size: 1rem; margin: 0 0 0.75rem; }
+        .toc ol { padding-left: 1.25rem; }
+        .toc li { margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .toc a { text-decoration: none; color: var(--text-soft); }
+        .toc a:hover { color: var(--brand-600); }
+        .callout { background: var(--brand-50); border: 1px solid var(--brand-100); border-radius: 1rem; padding: 1.5rem; margin: 2rem 0; }
+        .callout p { margin-bottom: 0.75rem; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.4rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none; background: var(--brand-600); color: white; font-size: 0.9375rem; }
+        .btn:hover { background: var(--brand-700); }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+        .faq-question { font-weight: 700; margin-bottom: 0.5rem; color: var(--text); font-size: 1.0625rem; }
+        .related-pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .related-pages a { display: block; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: 0.75rem; text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.875rem; }
+        .related-pages a:hover { border-color: var(--brand-500); background: var(--brand-50); }
+        .related-pages a small { display: block; font-weight: 400; color: var(--text-soft); margin-top: 0.25rem; }
+        .ad-wrap { display: flex; justify-content: center; margin: 2.5rem 0; min-height: 90px; }
+        footer { background: var(--slate-900); color: var(--slate-400); padding: 3rem 0 2rem; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .footer-bottom { border-top: 1px solid var(--slate-800); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; }
+        .footer-bottom a { color: inherit; text-decoration: none; }
+        :focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+    </style>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo"><div class="logo-icon"><i data-lucide="graduation-cap"></i></div>FreeGPATool</a>
+            <nav aria-label="Primary">
+                <a href="/#gpa-calc">GPA Calculator</a>
+                <a href="/#grade-calc">Grade Calculator</a>
+                <a href="/how-to-calculate-gpa.html">Guides</a>
+                <a href="/#faq">FAQ</a>
+            </nav>
+            <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i data-lucide="moon"></i></button>
+        </div>
+    </header>
+
+    <p class="breadcrumb container" aria-label="Breadcrumb">
+        <a href="/">Home</a> / GPA Scale Guide
+    </p>
+
+    <main id="main">
+        <div class="container">
+            <article>
+                <h1>GPA Scale Guide: Every System, Side by Side</h1>
+                <p class="lede">There is no single global GPA scale. Here's how the major systems work, what counts
+                    as a top grade in each, and rough (not official) equivalencies between them.</p>
+
+                <div class="ad-wrap">
+                    <script>
+                        atOptions = { 'key': '000a728f6e7d529477c86aaf4ba72f23', 'format': 'iframe', 'height': 50, 'width': 320, 'params': {} };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/000a728f6e7d529477c86aaf4ba72f23/invoke.js"></script>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol>
+                        <li><a href="#comparison">Quick comparison table</a></li>
+                        <li><a href="#us">United States: 4.0 scale</a></li>
+                        <li><a href="#uk">United Kingdom: degree classifications</a></li>
+                        <li><a href="#canada">Canada: 4.0 / 4.33 scale</a></li>
+                        <li><a href="#australia">Australia: 7-point scale</a></li>
+                        <li><a href="#nigeria">Nigeria: 5-point CGPA</a></li>
+                        <li><a href="#india">India: 10-point CGPA</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ol>
+                </nav>
+
+                <h2 id="comparison">Quick comparison table</h2>
+                <p>These are approximate equivalencies for orientation only — always defer to your target
+                    institution's official conversion policy for anything that affects admissions or transfer credit.</p>
+                <table>
+                    <thead><tr><th scope="col">Country</th><th scope="col">Top mark</th><th scope="col">Scale type</th></tr></thead>
+                    <tbody>
+                        <tr><td>United States</td><td>4.0 (A)</td><td>Point average</td></tr>
+                        <tr><td>United Kingdom</td><td>First Class (70%+)</td><td>Classification bands</td></tr>
+                        <tr><td>Canada</td><td>4.0 or 4.33 (A+)</td><td>Point average or percentage</td></tr>
+                        <tr><td>Australia</td><td>7 (High Distinction)</td><td>Point average</td></tr>
+                        <tr><td>Nigeria</td><td>5.0 (First Class, 4.50–5.00)</td><td>Point average (CGPA)</td></tr>
+                        <tr><td>India</td><td>10 (Outstanding)</td><td>Point average (CGPA)</td></tr>
+                    </tbody>
+                </table>
+
+                <h2 id="us">United States: 4.0 scale</h2>
+                <p>Letter grades A through F map to points from 4.0 down to 0.0, often with plus/minus increments
+                    (A- = 3.7, B+ = 3.3, and so on). Some competitive high schools add a weighted 5.0 scale for
+                    Honors, AP, or IB courses.</p>
+
+                <h2 id="uk">United Kingdom: degree classifications</h2>
+                <table>
+                    <thead><tr><th scope="col">Classification</th><th scope="col">Percentage</th></tr></thead>
+                    <tbody>
+                        <tr><td>First Class Honours</td><td>70%+</td></tr>
+                        <tr><td>Upper Second (2:1)</td><td>60–69%</td></tr>
+                        <tr><td>Lower Second (2:2)</td><td>50–59%</td></tr>
+                        <tr><td>Third Class</td><td>40–49%</td></tr>
+                    </tbody>
+                </table>
+                <p>UK universities don't typically use a decimal GPA at all — the classification band itself is what
+                    appears on transcripts and diplomas.</p>
+
+                <h2 id="canada">Canada: 4.0 / 4.33 scale</h2>
+                <p>Most Canadian universities use a 4.0 or 4.33 scale (the extra 0.33 allows an A+ to outrank a
+                    plain A), though some provinces, including parts of Ontario, report percentages instead.</p>
+
+                <h2 id="australia">Australia: 7-point scale</h2>
+                <table>
+                    <thead><tr><th scope="col">Grade</th><th scope="col">Points</th></tr></thead>
+                    <tbody>
+                        <tr><td>High Distinction</td><td>7</td></tr>
+                        <tr><td>Distinction</td><td>6</td></tr>
+                        <tr><td>Credit</td><td>5</td></tr>
+                        <tr><td>Pass</td><td>4</td></tr>
+                        <tr><td>Fail</td><td>0</td></tr>
+                    </tbody>
+                </table>
+
+                <h2 id="nigeria">Nigeria: 5-point CGPA</h2>
+                <table>
+                    <thead><tr><th scope="col">Class of Degree</th><th scope="col">CGPA range</th></tr></thead>
+                    <tbody>
+                        <tr><td>First Class</td><td>4.50 – 5.00</td></tr>
+                        <tr><td>Second Class Upper</td><td>3.50 – 4.49</td></tr>
+                        <tr><td>Second Class Lower</td><td>2.40 – 3.49</td></tr>
+                        <tr><td>Third Class</td><td>1.50 – 2.39</td></tr>
+                        <tr><td>Pass</td><td>1.00 – 1.49</td></tr>
+                    </tbody>
+                </table>
+                <p>Nigerian universities calculate CGPA cumulatively across every session using the same quality-points-over-credit-units
+                    formula as the US system, just scaled to 5.0 instead of 4.0. See the
+                    <a href="/gpa-guide-nigeria.html">full Nigeria GPA guide</a> for a worked example.</p>
+
+                <h2 id="india">India: 10-point CGPA</h2>
+                <table>
+                    <thead><tr><th scope="col">Grade</th><th scope="col">Points</th></tr></thead>
+                    <tbody>
+                        <tr><td>Outstanding</td><td>10</td></tr>
+                        <tr><td>Excellent</td><td>9</td></tr>
+                        <tr><td>Very Good</td><td>8</td></tr>
+                        <tr><td>Good</td><td>7</td></tr>
+                        <tr><td>Above Average</td><td>6</td></tr>
+                        <tr><td>Average</td><td>5</td></tr>
+                    </tbody>
+                </table>
+                <p>Many Indian institutions also publish a formula to convert CGPA to an equivalent percentage, such
+                    as multiplying CGPA by 9.5 — but this varies by university, so always confirm with the issuing
+                    institution.</p>
+
+                <div class="callout">
+                    <p><strong>Whichever scale you use, the calculator adapts.</strong> Select your letter grades and
+                        credits and get an instant, accurate result.</p>
+                    <a href="/#gpa-calc" class="btn"><i data-lucide="calculator"></i> Open the GPA Calculator</a>
+                </div>
+
+                <div id="faq">
+                    <h2>FAQ</h2>
+                    <div class="faq-item">
+                        <div class="faq-question">Why do grading scales differ by country?</div>
+                        <p>Each country's education system developed its grading approach independently, often
+                            shaped by distinct historical university traditions — there's no single global standard.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I convert my GPA for a foreign university application?</div>
+                        <p>Use the destination university's official conversion table when one is published, since
+                            institutions typically provide their own equivalency guidance for applicants coming from
+                            a different grading system.</p>
+                    </div>
+                </div>
+
+                <div class="related-pages">
+                    <a href="/how-to-calculate-gpa.html">How to Calculate GPA<small>Full step-by-step tutorial</small></a>
+                    <a href="/gpa-vs-cgpa.html">GPA vs CGPA<small>Deep dive with examples</small></a>
+                    <a href="/gpa-guide-nigeria.html">GPA Guide for Nigeria<small>5-point CGPA system explained</small></a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreeGPATool. All rights reserved.</p>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                    <a href="/">Home</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        function applyTheme(theme) {
+            root.setAttribute('data-theme', theme);
+            localStorage.setItem('fgt-theme', theme);
+            if (window.lucide) {
+                themeToggle.innerHTML = theme === 'dark' ? '<i data-lucide="sun"></i>' : '<i data-lucide="moon"></i>';
+                lucide.createIcons();
+            }
+        }
+        applyTheme(localStorage.getItem('fgt-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+        themeToggle.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+    </script>
+</body>
+
+</html>
