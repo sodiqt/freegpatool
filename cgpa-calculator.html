@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator: Cumulative GPA Across All Semesters | FreeGPATool</title>
+    <meta name="description"
+        content="Free CGPA calculator. Add every semester's GPA and credits to get your accurate cumulative GPA instantly, with a worked example and support for the 4.0, 5.0, and 10.0 scales.">
+    <link rel="canonical" href="https://freegpatool.vercel.app/cgpa-calculator.html" />
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#2451e0">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FreeGPATool">
+    <meta property="og:title" content="CGPA Calculator: Cumulative GPA Across All Semesters">
+    <meta property="og:description" content="Add every semester's GPA and credits to get your accurate cumulative GPA instantly.">
+    <meta property="og:url" content="https://freegpatool.vercel.app/cgpa-calculator.html">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CGPA Calculator: Cumulative GPA Across All Semesters">
+    <meta name="twitter:description" content="Add every semester's GPA and credits to get your accurate cumulative GPA instantly.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "FreeGPATool CGPA Calculator",
+        "url": "https://freegpatool.vercel.app/cgpa-calculator.html",
+        "applicationCategory": "EducationApplication",
+        "operatingSystem": "Any (Web-based)",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Free cumulative GPA (CGPA) calculator that combines multiple semesters of GPA and credits into one accurate result."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freegpatool.vercel.app/" },
+            { "@type": "ListItem", "position": 2, "name": "CGPA Calculator", "item": "https://freegpatool.vercel.app/cgpa-calculator.html" }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "What's the difference between this and the GPA calculator?", "acceptedAnswer": { "@type": "Answer", "text": "The GPA calculator on the homepage works from individual course grades for one term. This CGPA calculator works from each semester's already-known GPA and credit total, combining several semesters into one cumulative figure." } },
+            { "@type": "Question", "name": "What if I don't know a past semester's exact GPA?", "acceptedAnswer": { "@type": "Answer", "text": "Check your official transcript or student portal, since most institutions list each term's GPA alongside your cumulative figure; using an estimated GPA will make the CGPA result only approximate." } }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --brand-50: #eff4ff; --brand-100: #dbe6fe; --brand-200: #bcd0fe; --brand-500: #4f7cf7; --brand-600: #2451e0; --brand-700: #1b3fb8;
+            --good-500: #16a34a; --warn-500: #ef4444;
+            --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0; --slate-300: #cbd5e1; --slate-400: #94a3b8;
+            --slate-600: #475569; --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a;
+            --bg: #ffffff; --bg-soft: var(--slate-50); --text: var(--slate-900); --text-soft: var(--slate-600); --border: var(--slate-200); --card-bg: #fff;
+        }
+        html[data-theme="dark"] { --bg:#0b1120; --bg-soft:#111827; --text:#e2e8f0; --text-soft:#94a3b8; --border:#1f2937; --card-bg:#131b2e; --brand-50:#101b33; --brand-100:#16213d; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; letter-spacing: -0.02em; color: var(--text); }
+        a { color: var(--brand-600); }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+        .skip-link { position: absolute; left: -999px; top: 0; background: var(--brand-600); color: #fff; padding: 0.75rem 1.25rem; z-index: 1000; }
+        .skip-link:focus { left: 0; }
+        header { background: var(--bg); border-bottom: 1px solid var(--border); height: 4rem; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .header-content { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.25rem; }
+        .logo-icon { background: var(--brand-600); color: white; padding: 0.4rem; border-radius: 0.5rem; display: flex; }
+        nav { display: none; }
+        @media (min-width: 900px) { nav { display: flex; gap: 1.75rem; } }
+        nav a { text-decoration: none; color: var(--text-soft); font-size: 0.875rem; font-weight: 500; }
+        nav a:hover { color: var(--brand-600); }
+        .icon-btn { width: 2.5rem; height: 2.5rem; border-radius: 0.75rem; border: 1px solid var(--border); background: var(--bg); color: var(--text-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .breadcrumb { font-size: 0.8125rem; color: var(--text-soft); padding: 1.25rem 0 0; }
+        .breadcrumb a { color: var(--text-soft); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--brand-600); }
+        article { padding: 1.5rem 0 4rem; }
+        h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); margin: 1rem 0 1rem; line-height: 1.15; }
+        .lede { font-size: 1.125rem; color: var(--text-soft); margin-bottom: 2rem; }
+        h2 { font-size: 1.6rem; margin: 2.25rem 0 1rem; scroll-margin-top: 5rem; }
+        h3 { font-size: 1.2rem; margin: 1.5rem 0 0.75rem; }
+        p { color: var(--text-soft); margin-bottom: 1.15rem; font-size: 1.0625rem; }
+        ul, ol { margin-bottom: 1.15rem; padding-left: 1.5rem; color: var(--text-soft); }
+        li { margin-bottom: 0.55rem; }
+        strong { color: var(--text); }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        th, td { text-align: left; border-bottom: 1px solid var(--border); padding: 0.6rem 0.75rem; font-size: 0.95rem; }
+        th { color: var(--text-soft); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .toc { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; margin: 2rem 0; }
+        .toc h2 { font-size: 1rem; margin: 0 0 0.75rem; }
+        .toc ol { padding-left: 1.25rem; }
+        .toc li { margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .toc a { text-decoration: none; color: var(--text-soft); }
+        .toc a:hover { color: var(--brand-600); }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.4rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none; background: var(--brand-600); color: white; font-size: 0.9375rem; cursor: pointer; border: none; font-family: inherit; }
+        .btn:hover { background: var(--brand-700); }
+        .btn-secondary { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover { background: var(--bg-soft); }
+        .btn-group { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+        .faq-question { font-weight: 700; margin-bottom: 0.5rem; color: var(--text); font-size: 1.0625rem; }
+        .related-pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .related-pages a { display: block; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: 0.75rem; text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.875rem; }
+        .related-pages a:hover { border-color: var(--brand-500); background: var(--brand-50); }
+        .related-pages a small { display: block; font-weight: 400; color: var(--text-soft); margin-top: 0.25rem; }
+        .ad-wrap { display: flex; justify-content: center; margin: 2.5rem 0; min-height: 90px; }
+        .calc-card { background: var(--brand-50); border: 1px solid var(--brand-100); border-radius: 1.5rem; padding: 1.75rem; margin: 1.5rem 0 2.5rem; }
+        .table-container { overflow-x: auto; }
+        input, select { width: 100%; padding: 0.6rem 0.8rem; border-radius: 0.65rem; border: 1px solid var(--border); background: var(--bg); color: var(--text); outline: none; font-size: 0.875rem; font-family: inherit; }
+        input:focus, select:focus { border-color: var(--brand-500); box-shadow: 0 0 0 3px rgba(79,124,247,0.15); }
+        .remove-btn { background: none; border: none; color: var(--slate-400); cursor: pointer; padding: 0.4rem; }
+        .remove-btn:hover { color: var(--warn-500); }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.1rem; margin-top: 1.5rem; }
+        .result-box { background: var(--card-bg); padding: 1.1rem; border-radius: 1rem; border: 1px solid var(--brand-100); }
+        .result-label { color: var(--brand-600); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem; }
+        .result-value { font-size: 2rem; font-weight: 700; color: var(--text); font-family: 'Outfit', sans-serif; }
+        .scale-row { margin-bottom: 1.25rem; max-width: 260px; }
+        .scale-row label { display:block; font-weight:600; font-size:0.85rem; margin-bottom:0.4rem; }
+        footer { background: var(--slate-900); color: var(--slate-400); padding: 3rem 0 2rem; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .footer-bottom { border-top: 1px solid var(--slate-800); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; }
+        .footer-bottom a { color: inherit; text-decoration: none; }
+        :focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+    </style>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo"><div class="logo-icon"><i data-lucide="graduation-cap"></i></div>FreeGPATool</a>
+            <nav aria-label="Primary">
+                <a href="/#gpa-calc">GPA Calculator</a>
+                <a href="/#grade-calc">Grade Calculator</a>
+                <a href="/how-to-calculate-gpa.html">Guides</a>
+                <a href="/#faq">FAQ</a>
+            </nav>
+            <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i data-lucide="moon"></i></button>
+        </div>
+    </header>
+
+    <p class="breadcrumb container" aria-label="Breadcrumb">
+        <a href="/">Home</a> / CGPA Calculator
+    </p>
+
+    <main id="main">
+        <div class="container">
+            <article>
+                <h1>CGPA Calculator</h1>
+                <p class="lede">Combine every semester's GPA and credit load into one accurate cumulative GPA. Add
+                    as many semesters as you've completed.</p>
+
+                <div class="ad-wrap">
+                    <script>
+                        atOptions = { 'key': '000a728f6e7d529477c86aaf4ba72f23', 'format': 'iframe', 'height': 50, 'width': 320, 'params': {} };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/000a728f6e7d529477c86aaf4ba72f23/invoke.js"></script>
+                </div>
+
+                <div class="calc-card">
+                    <div class="scale-row">
+                        <label for="cgpa-scale">Grading scale (max GPA)</label>
+                        <select id="cgpa-scale" onchange="calculateCgpa()">
+                            <option value="4">4.0 scale (US, Canada)</option>
+                            <option value="5">5.0 scale (Nigeria)</option>
+                            <option value="7">7.0 scale (Australia)</option>
+                            <option value="10">10.0 scale (India)</option>
+                        </select>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Semester (optional)</th>
+                                    <th scope="col">Semester GPA</th>
+                                    <th scope="col">Credits / Units</th>
+                                    <th scope="col" style="width:40px"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="cgpa-body"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="btn-group" style="margin-top:1rem;">
+                        <button class="btn btn-secondary" onclick="addCgpaRow()"><i data-lucide="plus"></i> Add semester</button>
+                        <button class="btn btn-secondary" onclick="resetCgpa()"><i data-lucide="refresh-cw"></i> Reset</button>
+                    </div>
+
+                    <div class="results-grid">
+                        <div class="result-box">
+                            <div class="result-label">Cumulative GPA</div>
+                            <div id="cgpa-result" class="result-value">0.00</div>
+                        </div>
+                        <div class="result-box">
+                            <div class="result-label">Total Credits</div>
+                            <div id="cgpa-total-credits" class="result-value">0</div>
+                        </div>
+                        <div class="result-box">
+                            <div class="result-label">Semesters</div>
+                            <div id="cgpa-total-semesters" class="result-value">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol>
+                        <li><a href="#formula">The CGPA formula</a></li>
+                        <li><a href="#example">Worked example</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ol>
+                </nav>
+
+                <h2 id="formula">The CGPA formula</h2>
+                <p>CGPA is a credit-weighted average of every semester's GPA — not a plain average of the numbers
+                    themselves. That's exactly why this calculator asks for each semester's credit total, not just
+                    the GPA: a semester carrying 18 credits should influence your CGPA more than one carrying 12.</p>
+
+                <!-- Second ad unit -->
+                <div class="ad-wrap" style="min-height:250px;">
+                    <script>
+                        atOptions = { 'key': '6d924e3634fdbd559dfe94ad25cb16db', 'format': 'iframe', 'height': 250, 'width': 300, 'params': {} };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/6d924e3634fdbd559dfe94ad25cb16db/invoke.js"></script>
+                </div>
+
+                <h2 id="example">Worked example</h2>
+                <table>
+                    <thead><tr><th scope="col">Semester</th><th scope="col">GPA</th><th scope="col">Credits</th><th scope="col">Quality Points</th></tr></thead>
+                    <tbody>
+                        <tr><td>Semester 1</td><td>3.20</td><td>15</td><td>48.0</td></tr>
+                        <tr><td>Semester 2</td><td>2.80</td><td>16</td><td>44.8</td></tr>
+                        <tr><td>Semester 3</td><td>3.70</td><td>15</td><td>55.5</td></tr>
+                        <tr><td colspan="2"><strong>Totals</strong></td><td><strong>46</strong></td><td><strong>148.3</strong></td></tr>
+                    </tbody>
+                </table>
+                <p>148.3 ÷ 46 = <strong>3.22 CGPA</strong>. For the full explanation of how this differs from a
+                    single term's GPA, see the <a href="/gpa-vs-cgpa.html">GPA vs CGPA guide</a>.</p>
+
+                <div id="faq">
+                    <h2>FAQ</h2>
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between this and the GPA calculator?</div>
+                        <p>The <a href="/#gpa-calc">GPA calculator</a> works from individual course grades for one
+                            term. This tool works from each semester's already-known GPA and credit total, combining
+                            several semesters into one cumulative figure.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What if I don't know a past semester's exact GPA?</div>
+                        <p>Check your official transcript or student portal — most institutions list each term's GPA
+                            alongside your cumulative figure. An estimated GPA will only give an approximate result.</p>
+                    </div>
+                </div>
+
+                <div class="related-pages">
+                    <a href="/gpa-vs-cgpa.html">GPA vs CGPA<small>Deep dive with examples</small></a>
+                    <a href="/gpa-scale-guide.html">GPA Scale Guide<small>Every scale, side by side</small></a>
+                    <a href="/how-to-calculate-gpa.html">How to Calculate GPA<small>Full step-by-step tutorial</small></a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreeGPATool. All rights reserved.</p>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                    <a href="/">Home</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        function applyTheme(theme) {
+            root.setAttribute('data-theme', theme);
+            localStorage.setItem('fgt-theme', theme);
+            if (window.lucide) {
+                themeToggle.innerHTML = theme === 'dark' ? '<i data-lucide="sun"></i>' : '<i data-lucide="moon"></i>';
+                lucide.createIcons();
+            }
+        }
+        applyTheme(localStorage.getItem('fgt-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+        themeToggle.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+
+        function addCgpaRow(name = '', gpa = '', credits = '') {
+            const tbody = document.getElementById('cgpa-body');
+            const id = Math.random().toString(36).substr(2, 9);
+            const tr = document.createElement('tr');
+            tr.id = `cgpa-row-${id}`;
+            tr.innerHTML = `
+                <td><input type="text" value="${name}" placeholder="e.g. Semester 1" aria-label="Semester name" oninput="calculateCgpa()"></td>
+                <td><input type="number" step="0.01" value="${gpa}" aria-label="Semester GPA" oninput="calculateCgpa()"></td>
+                <td><input type="number" value="${credits}" aria-label="Credits" oninput="calculateCgpa()"></td>
+                <td><button class="remove-btn" onclick="removeCgpaRow('${id}')" aria-label="Remove semester"><i data-lucide="trash-2"></i></button></td>
+            `;
+            tbody.appendChild(tr);
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function removeCgpaRow(id) {
+            const row = document.getElementById(`cgpa-row-${id}`);
+            if (document.querySelectorAll('#cgpa-body tr').length > 1) {
+                row.remove();
+                calculateCgpa();
+            }
+        }
+
+        function resetCgpa() {
+            document.getElementById('cgpa-body').innerHTML = '';
+            addCgpaRow('Semester 1', '3.20', '15');
+            addCgpaRow('Semester 2', '2.80', '16');
+            addCgpaRow('Semester 3', '3.70', '15');
+            calculateCgpa();
+        }
+
+        function calculateCgpa() {
+            const rows = document.querySelectorAll('#cgpa-body tr');
+            let totalQP = 0, totalCredits = 0, semesterCount = 0;
+            rows.forEach(row => {
+                const inputs = row.querySelectorAll('input[type="number"]');
+                const gpa = parseFloat(inputs[0].value);
+                const credits = parseFloat(inputs[1].value);
+                if (!isNaN(gpa) && !isNaN(credits) && credits > 0) {
+                    totalQP += gpa * credits;
+                    totalCredits += credits;
+                    semesterCount++;
+                }
+            });
+            const cgpa = totalCredits > 0 ? totalQP / totalCredits : 0;
+            document.getElementById('cgpa-result').innerText = cgpa.toFixed(2);
+            document.getElementById('cgpa-total-credits').innerText = totalCredits;
+            document.getElementById('cgpa-total-semesters').innerText = semesterCount;
+        }
+
+        resetCgpa();
+    </script>
+</body>
+
+</html>
