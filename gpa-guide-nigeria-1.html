@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Guide for Nigeria: 5-Point CGPA System Explained | FreeGPATool</title>
+    <meta name="description"
+        content="How Nigerian universities calculate CGPA on the 5-point scale, degree classification cutoffs, a full worked example, and how it compares to the US 4.0 scale.">
+    <link rel="canonical" href="https://freegpatool.vercel.app/gpa-guide-nigeria.html" />
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#2451e0">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="FreeGPATool">
+    <meta property="og:title" content="GPA Guide for Nigeria: 5-Point CGPA System Explained">
+    <meta property="og:description" content="How Nigerian universities calculate CGPA on the 5-point scale, with a full worked example.">
+    <meta property="og:url" content="https://freegpatool.vercel.app/gpa-guide-nigeria.html">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPA Guide for Nigeria: 5-Point CGPA System Explained">
+    <meta name="twitter:description" content="How Nigerian universities calculate CGPA on the 5-point scale, with a full worked example.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freegpatool.vercel.app/" },
+            { "@type": "ListItem", "position": 2, "name": "GPA Guide for Nigeria", "item": "https://freegpatool.vercel.app/gpa-guide-nigeria.html" }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "What CGPA is needed for a First Class in Nigeria?", "acceptedAnswer": { "@type": "Answer", "text": "Most Nigerian universities require a CGPA of 4.50 to 5.00 on the 5-point scale for a First Class degree, though exact cutoffs are set by each institution's senate." } },
+            { "@type": "Question", "name": "Do all Nigerian universities use the 5-point scale?", "acceptedAnswer": { "@type": "Answer", "text": "The 5-point scale is the most common in Nigeria, but a small number of institutions use a 4-point or 7-point scale instead, so students should confirm with their own school's academic regulations." } },
+            { "@type": "Question", "name": "How is Nigerian CGPA different from US GPA?", "acceptedAnswer": { "@type": "Answer", "text": "Both use the same underlying method of quality points divided by credit units, but the Nigerian scale tops out at 5.0 instead of 4.0, and Nigerian courses are typically measured in credit units rather than credit hours." } }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --brand-50: #eff4ff; --brand-100: #dbe6fe; --brand-500: #4f7cf7; --brand-600: #2451e0; --brand-700: #1b3fb8;
+            --good-500: #16a34a; --warn-500: #ef4444;
+            --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0; --slate-400: #94a3b8;
+            --slate-600: #475569; --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a;
+            --bg: #ffffff; --bg-soft: var(--slate-50); --text: var(--slate-900); --text-soft: var(--slate-600); --border: var(--slate-200); --card-bg: #fff;
+        }
+        html[data-theme="dark"] { --bg:#0b1120; --bg-soft:#111827; --text:#e2e8f0; --text-soft:#94a3b8; --border:#1f2937; --card-bg:#131b2e; --brand-50:#101b33; --brand-100:#16213d; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; letter-spacing: -0.02em; color: var(--text); }
+        a { color: var(--brand-600); }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+        .skip-link { position: absolute; left: -999px; top: 0; background: var(--brand-600); color: #fff; padding: 0.75rem 1.25rem; z-index: 1000; }
+        .skip-link:focus { left: 0; }
+        header { background: var(--bg); border-bottom: 1px solid var(--border); height: 4rem; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .header-content { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.25rem; }
+        .logo-icon { background: var(--brand-600); color: white; padding: 0.4rem; border-radius: 0.5rem; display: flex; }
+        nav { display: none; }
+        @media (min-width: 900px) { nav { display: flex; gap: 1.75rem; } }
+        nav a { text-decoration: none; color: var(--text-soft); font-size: 0.875rem; font-weight: 500; }
+        nav a:hover { color: var(--brand-600); }
+        .icon-btn { width: 2.5rem; height: 2.5rem; border-radius: 0.75rem; border: 1px solid var(--border); background: var(--bg); color: var(--text-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .breadcrumb { font-size: 0.8125rem; color: var(--text-soft); padding: 1.25rem 0 0; }
+        .breadcrumb a { color: var(--text-soft); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--brand-600); }
+        article { padding: 1.5rem 0 4rem; }
+        h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); margin: 1rem 0 1rem; line-height: 1.15; }
+        .lede { font-size: 1.125rem; color: var(--text-soft); margin-bottom: 2rem; }
+        h2 { font-size: 1.6rem; margin: 2.25rem 0 1rem; scroll-margin-top: 5rem; }
+        h3 { font-size: 1.2rem; margin: 1.5rem 0 0.75rem; }
+        p { color: var(--text-soft); margin-bottom: 1.15rem; font-size: 1.0625rem; }
+        ul, ol { margin-bottom: 1.15rem; padding-left: 1.5rem; color: var(--text-soft); }
+        li { margin-bottom: 0.55rem; }
+        strong { color: var(--text); }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        th, td { text-align: left; border-bottom: 1px solid var(--border); padding: 0.6rem 0.75rem; font-size: 0.95rem; }
+        th { color: var(--text-soft); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .toc { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; margin: 2rem 0; }
+        .toc h2 { font-size: 1rem; margin: 0 0 0.75rem; }
+        .toc ol { padding-left: 1.25rem; }
+        .toc li { margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .toc a { text-decoration: none; color: var(--text-soft); }
+        .toc a:hover { color: var(--brand-600); }
+        .callout { background: var(--brand-50); border: 1px solid var(--brand-100); border-radius: 1rem; padding: 1.5rem; margin: 2rem 0; }
+        .callout p { margin-bottom: 0.75rem; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.4rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none; background: var(--brand-600); color: white; font-size: 0.9375rem; }
+        .btn:hover { background: var(--brand-700); }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+        .faq-question { font-weight: 700; margin-bottom: 0.5rem; color: var(--text); font-size: 1.0625rem; }
+        .related-pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .related-pages a { display: block; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: 0.75rem; text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.875rem; }
+        .related-pages a:hover { border-color: var(--brand-500); background: var(--brand-50); }
+        .related-pages a small { display: block; font-weight: 400; color: var(--text-soft); margin-top: 0.25rem; }
+        .ad-wrap { display: flex; justify-content: center; margin: 2.5rem 0; min-height: 90px; }
+        footer { background: var(--slate-900); color: var(--slate-400); padding: 3rem 0 2rem; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .footer-bottom { border-top: 1px solid var(--slate-800); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; }
+        .footer-bottom a { color: inherit; text-decoration: none; }
+        :focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+    </style>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo"><div class="logo-icon"><i data-lucide="graduation-cap"></i></div>FreeGPATool</a>
+            <nav aria-label="Primary">
+                <a href="/#gpa-calc">GPA Calculator</a>
+                <a href="/#grade-calc">Grade Calculator</a>
+                <a href="/how-to-calculate-gpa.html">Guides</a>
+                <a href="/#faq">FAQ</a>
+            </nav>
+            <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i data-lucide="moon"></i></button>
+        </div>
+    </header>
+
+    <p class="breadcrumb container" aria-label="Breadcrumb">
+        <a href="/">Home</a> / GPA Guide for Nigeria
+    </p>
+
+    <main id="main">
+        <div class="container">
+            <article>
+                <h1>GPA Guide for Nigeria: The 5-Point CGPA System Explained</h1>
+                <p class="lede">Nigerian universities calculate CGPA on a 5-point scale, not the 4.0 scale used in
+                    the US. Here's exactly how it works, the degree classification cutoffs, and a full worked
+                    example using credit units.</p>
+
+                <div class="ad-wrap">
+                    <script>
+                        atOptions = { 'key': '000a728f6e7d529477c86aaf4ba72f23', 'format': 'iframe', 'height': 50, 'width': 320, 'params': {} };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/000a728f6e7d529477c86aaf4ba72f23/invoke.js"></script>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol>
+                        <li><a href="#grading-scale">The Nigerian 5-point grading scale</a></li>
+                        <li><a href="#classifications">Degree classification cutoffs</a></li>
+                        <li><a href="#example">Worked example with credit units</a></li>
+                        <li><a href="#vs-us">How it compares to the US 4.0 scale</a></li>
+                        <li><a href="#tips">Tips for Nigerian students</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ol>
+                </nav>
+
+                <h2 id="grading-scale">The Nigerian 5-point grading scale</h2>
+                <table>
+                    <thead><tr><th scope="col">Letter Grade</th><th scope="col">Score Range</th><th scope="col">Grade Point</th></tr></thead>
+                    <tbody>
+                        <tr><td>A</td><td>70–100</td><td>5</td></tr>
+                        <tr><td>B</td><td>60–69</td><td>4</td></tr>
+                        <tr><td>C</td><td>50–59</td><td>3</td></tr>
+                        <tr><td>D</td><td>45–49</td><td>2</td></tr>
+                        <tr><td>E</td><td>40–44</td><td>1</td></tr>
+                        <tr><td>F</td><td>0–39</td><td>0</td></tr>
+                    </tbody>
+                </table>
+                <p>Individual universities can adjust the exact score bands within their own senate regulations, but
+                    this A–F to 5–0 mapping is the most widely used version across Nigerian federal and state
+                    universities.</p>
+
+                <h2 id="classifications">Degree classification cutoffs</h2>
+                <table>
+                    <thead><tr><th scope="col">Classification</th><th scope="col">CGPA range</th></tr></thead>
+                    <tbody>
+                        <tr><td>First Class</td><td>4.50 – 5.00</td></tr>
+                        <tr><td>Second Class Upper (2:1)</td><td>3.50 – 4.49</td></tr>
+                        <tr><td>Second Class Lower (2:2)</td><td>2.40 – 3.49</td></tr>
+                        <tr><td>Third Class</td><td>1.50 – 2.39</td></tr>
+                        <tr><td>Pass</td><td>1.00 – 1.49</td></tr>
+                    </tbody>
+                </table>
+
+                <h2 id="example">Worked example with credit units</h2>
+                <p>Nigerian courses are measured in "credit units" rather than credit hours, but the math works
+                    identically — grade point multiplied by credit units gives quality points, and total quality
+                    points divided by total credit units gives CGPA.</p>
+                <table>
+                    <thead><tr><th scope="col">Course</th><th scope="col">Grade</th><th scope="col">Grade Point</th><th scope="col">Credit Units</th><th scope="col">Quality Points</th></tr></thead>
+                    <tbody>
+                        <tr><td>Anatomy</td><td>A</td><td>5</td><td>3</td><td>15</td></tr>
+                        <tr><td>Physiology</td><td>B</td><td>4</td><td>3</td><td>12</td></tr>
+                        <tr><td>Nursing Fundamentals</td><td>A</td><td>5</td><td>4</td><td>20</td></tr>
+                        <tr><td>Sociology</td><td>C</td><td>3</td><td>2</td><td>6</td></tr>
+                        <tr><td colspan="3"><strong>Totals</strong></td><td><strong>12</strong></td><td><strong>53</strong></td></tr>
+                    </tbody>
+                </table>
+                <p>53 ÷ 12 = <strong>4.42 CGPA</strong> for this session — just short of First Class, and squarely in
+                    the Second Class Upper range. Run your own courses through the <a href="/#gpa-calc">GPA
+                    calculator</a> and select the equivalent grade points to see your own standing.</p>
+
+                <!-- Second ad unit -->
+                <div class="ad-wrap" style="min-height:250px;">
+                    <script>
+                        atOptions = { 'key': '6d924e3634fdbd559dfe94ad25cb16db', 'format': 'iframe', 'height': 250, 'width': 300, 'params': {} };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/6d924e3634fdbd559dfe94ad25cb16db/invoke.js"></script>
+                </div>
+
+                <h2 id="vs-us">How it compares to the US 4.0 scale</h2>
+                <p>The mechanics are identical — both systems divide total quality points by total credits — but the
+                    ceiling and score bands differ. A Nigerian CGPA of 4.50 (First Class) is not simply "4.50 out of
+                    4.0 US GPA"; it roughly corresponds to a US GPA near the top of the scale, since both represent
+                    the highest attainable classification within their own system. When applying internationally,
+                    use your target university's official conversion table rather than a straight proportional
+                    calculation.</p>
+
+                <h2 id="tips">Tips for Nigerian students</h2>
+                <ul>
+                    <li><strong>Track CGPA every session</strong>, not just at graduation — many postgraduate
+                        programs and NYSC-adjacent opportunities reference cumulative standing throughout your
+                        studies.</li>
+                    <li><strong>Know your carry-over policy.</strong> Some institutions average a resit grade with
+                        the original; others replace it entirely — this materially changes how a resit affects CGPA.</li>
+                    <li><strong>Elective credit units still count.</strong> A low grade in a "less important" 1-unit
+                        elective has less drag on CGPA than the same grade in a 4-unit core course, so prioritize
+                        study time accordingly.</li>
+                </ul>
+
+                <div class="callout">
+                    <p><strong>Calculate your Nigerian CGPA now.</strong> Enter your courses and credit units into
+                        the calculator for an instant, accurate result.</p>
+                    <a href="/#gpa-calc" class="btn"><i data-lucide="calculator"></i> Open the GPA Calculator</a>
+                </div>
+
+                <div id="faq">
+                    <h2>FAQ</h2>
+                    <div class="faq-item">
+                        <div class="faq-question">What CGPA is needed for a First Class in Nigeria?</div>
+                        <p>Most Nigerian universities require a CGPA of 4.50 to 5.00 on the 5-point scale, though
+                            exact cutoffs are set by each institution's senate.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do all Nigerian universities use the 5-point scale?</div>
+                        <p>It's the most common approach, but a small number of institutions use a 4-point or
+                            7-point scale instead — confirm with your own school's academic regulations.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How is Nigerian CGPA different from US GPA?</div>
+                        <p>Both use the same underlying quality-points-divided-by-credits method, but the Nigerian
+                            scale tops out at 5.0 rather than 4.0, and uses credit units rather than credit hours.</p>
+                    </div>
+                </div>
+
+                <div class="related-pages">
+                    <a href="/how-to-calculate-gpa.html">How to Calculate GPA<small>Full step-by-step tutorial</small></a>
+                    <a href="/gpa-vs-cgpa.html">GPA vs CGPA<small>Deep dive with examples</small></a>
+                    <a href="/gpa-scale-guide.html">GPA Scale Guide<small>Every scale, side by side</small></a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreeGPATool. All rights reserved.</p>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                    <a href="/">Home</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        function applyTheme(theme) {
+            root.setAttribute('data-theme', theme);
+            localStorage.setItem('fgt-theme', theme);
+            if (window.lucide) {
+                themeToggle.innerHTML = theme === 'dark' ? '<i data-lucide="sun"></i>' : '<i data-lucide="moon"></i>';
+                lucide.createIcons();
+            }
+        }
+        applyTheme(localStorage.getItem('fgt-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+        themeToggle.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+    </script>
+</body>
+
+</html>
