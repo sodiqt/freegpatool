@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA vs CGPA: What's the Difference? (With Examples) | FreeGPATool</title>
+    <meta name="description"
+        content="GPA and CGPA are not the same thing. See exactly how each is calculated, a side-by-side worked example, and which one actually matters for scholarships and grad school.">
+    <link rel="canonical" href="https://freegpatool.vercel.app/gpa-vs-cgpa.html" />
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#2451e0">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="FreeGPATool">
+    <meta property="og:title" content="GPA vs CGPA: What's the Difference?">
+    <meta property="og:description" content="See exactly how GPA and CGPA differ, with a worked example comparing both.">
+    <meta property="og:url" content="https://freegpatool.vercel.app/gpa-vs-cgpa.html">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPA vs CGPA: What's the Difference?">
+    <meta name="twitter:description" content="See exactly how GPA and CGPA differ, with a worked example comparing both.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freegpatool.vercel.app/" },
+            { "@type": "ListItem", "position": 2, "name": "GPA vs CGPA", "item": "https://freegpatool.vercel.app/gpa-vs-cgpa.html" }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "Is CGPA the average of all my GPAs?", "acceptedAnswer": { "@type": "Answer", "text": "Not exactly. CGPA is usually calculated from total quality points across all terms divided by total credits attempted, which is not the same as a simple average of each term's GPA unless every term carried identical credit loads." } },
+            { "@type": "Question", "name": "Which one do employers and grad schools look at?", "acceptedAnswer": { "@type": "Answer", "text": "Most graduate programs and employers ask for cumulative GPA (CGPA) since it reflects your entire academic record, though a strong upward trend in semester GPA can also be worth mentioning in an application." } },
+            { "@type": "Question", "name": "Can one bad semester ruin my CGPA?", "acceptedAnswer": { "@type": "Answer", "text": "A single weak semester has less impact on CGPA than on a standalone GPA, because it's blended with every other term's quality points and credits, though the effect is larger earlier in a program when fewer total credits exist." } }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --brand-50: #eff4ff; --brand-100: #dbe6fe; --brand-500: #4f7cf7; --brand-600: #2451e0; --brand-700: #1b3fb8;
+            --good-500: #16a34a; --warn-500: #ef4444;
+            --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0; --slate-400: #94a3b8;
+            --slate-600: #475569; --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a;
+            --bg: #ffffff; --bg-soft: var(--slate-50); --text: var(--slate-900); --text-soft: var(--slate-600); --border: var(--slate-200); --card-bg: #fff;
+        }
+        html[data-theme="dark"] { --bg:#0b1120; --bg-soft:#111827; --text:#e2e8f0; --text-soft:#94a3b8; --border:#1f2937; --card-bg:#131b2e; --brand-50:#101b33; --brand-100:#16213d; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; letter-spacing: -0.02em; color: var(--text); }
+        a { color: var(--brand-600); }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+        .skip-link { position: absolute; left: -999px; top: 0; background: var(--brand-600); color: #fff; padding: 0.75rem 1.25rem; z-index: 1000; }
+        .skip-link:focus { left: 0; }
+        header { background: var(--bg); border-bottom: 1px solid var(--border); height: 4rem; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .header-content { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.25rem; }
+        .logo-icon { background: var(--brand-600); color: white; padding: 0.4rem; border-radius: 0.5rem; display: flex; }
+        nav { display: none; }
+        @media (min-width: 900px) { nav { display: flex; gap: 1.75rem; } }
+        nav a { text-decoration: none; color: var(--text-soft); font-size: 0.875rem; font-weight: 500; }
+        nav a:hover { color: var(--brand-600); }
+        .icon-btn { width: 2.5rem; height: 2.5rem; border-radius: 0.75rem; border: 1px solid var(--border); background: var(--bg); color: var(--text-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .breadcrumb { font-size: 0.8125rem; color: var(--text-soft); padding: 1.25rem 0 0; }
+        .breadcrumb a { color: var(--text-soft); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--brand-600); }
+        article { padding: 1.5rem 0 4rem; }
+        h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); margin: 1rem 0 1rem; line-height: 1.15; }
+        .lede { font-size: 1.125rem; color: var(--text-soft); margin-bottom: 2rem; }
+        h2 { font-size: 1.6rem; margin: 2.25rem 0 1rem; scroll-margin-top: 5rem; }
+        h3 { font-size: 1.2rem; margin: 1.5rem 0 0.75rem; }
+        p { color: var(--text-soft); margin-bottom: 1.15rem; font-size: 1.0625rem; }
+        ul, ol { margin-bottom: 1.15rem; padding-left: 1.5rem; color: var(--text-soft); }
+        li { margin-bottom: 0.55rem; }
+        strong { color: var(--text); }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        th, td { text-align: left; border-bottom: 1px solid var(--border); padding: 0.6rem 0.75rem; font-size: 0.95rem; }
+        th { color: var(--text-soft); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .toc { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; margin: 2rem 0; }
+        .toc h2 { font-size: 1rem; margin: 0 0 0.75rem; }
+        .toc ol { padding-left: 1.25rem; }
+        .toc li { margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .toc a { text-decoration: none; color: var(--text-soft); }
+        .toc a:hover { color: var(--brand-600); }
+        .callout { background: var(--brand-50); border: 1px solid var(--brand-100); border-radius: 1rem; padding: 1.5rem; margin: 2rem 0; }
+        .callout p { margin-bottom: 0.75rem; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.4rem; border-radius: 0.75rem; font-weight: 600; text-decoration: none; background: var(--brand-600); color: white; font-size: 0.9375rem; }
+        .btn:hover { background: var(--brand-700); }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+        .faq-question { font-weight: 700; margin-bottom: 0.5rem; color: var(--text); font-size: 1.0625rem; }
+        .related-pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .related-pages a { display: block; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: 0.75rem; text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.875rem; }
+        .related-pages a:hover { border-color: var(--brand-500); background: var(--brand-50); }
+        .related-pages a small { display: block; font-weight: 400; color: var(--text-soft); margin-top: 0.25rem; }
+        .ad-wrap { display: flex; justify-content: center; margin: 2.5rem 0; min-height: 90px; }
+        .compare-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+        @media (min-width: 640px) { .compare-grid { grid-template-columns: 1fr 1fr; } }
+        .compare-card { border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; background: var(--card-bg); }
+        .compare-card h3 { margin-top: 0; color: var(--brand-600); }
+        footer { background: var(--slate-900); color: var(--slate-400); padding: 3rem 0 2rem; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .footer-bottom { border-top: 1px solid var(--slate-800); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; }
+        .footer-bottom a { color: inherit; text-decoration: none; }
+        :focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+    </style>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo"><div class="logo-icon"><i data-lucide="graduation-cap"></i></div>FreeGPATool</a>
+            <nav aria-label="Primary">
+                <a href="/#gpa-calc">GPA Calculator</a>
+                <a href="/#grade-calc">Grade Calculator</a>
+                <a href="/how-to-calculate-gpa.html">Guides</a>
+                <a href="/#faq">FAQ</a>
+            </nav>
+            <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i data-lucide="moon"></i></button>
+        </div>
+    </header>
+
+    <p class="breadcrumb container" aria-label="Breadcrumb">
+        <a href="/">Home</a> / GPA vs CGPA
+    </p>
+
+    <main id="main">
+        <div class="container">
+            <article>
+                <h1>GPA vs CGPA: What's the Real Difference?</h1>
+                <p class="lede">They get used interchangeably all the time, but GPA and CGPA answer two different
+                    questions — one about a single term, one about your entire academic record.</p>
+
+                <div class="ad-wrap">
+                    <script>
+                        atOptions = { 'key': '000a728f6e7d529477c86aaf4ba72f23', 'format': 'iframe', 'height': 50, 'width': 320, 'params': {} };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/000a728f6e7d529477c86aaf4ba72f23/invoke.js"></script>
+                </div>
+
+                <nav class="toc" aria-label="Table of contents">
+                    <h2>On this page</h2>
+                    <ol>
+                        <li><a href="#definitions">The core definitions</a></li>
+                        <li><a href="#example">Side-by-side worked example</a></li>
+                        <li><a href="#which-matters">Which one actually matters</a></li>
+                        <li><a href="#common-confusion">Where people mix them up</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ol>
+                </nav>
+
+                <h2 id="definitions">The core definitions</h2>
+                <div class="compare-grid">
+                    <div class="compare-card">
+                        <h3>GPA</h3>
+                        <p style="margin-bottom:0;">Grade Point Average for a single term — usually one semester or
+                            quarter. Resets in scope every term, though the transcript keeps every term's history.</p>
+                    </div>
+                    <div class="compare-card">
+                        <h3>CGPA</h3>
+                        <p style="margin-bottom:0;">Cumulative Grade Point Average across every graded term
+                            completed so far. Recalculated each time a new term's grades are added.</p>
+                    </div>
+                </div>
+                <p>Mechanically, both use the identical formula — total quality points divided by total credit
+                    hours. The only difference is the window of courses included: one term for GPA, every term for
+                    CGPA.</p>
+
+                <h2 id="example">Side-by-side worked example</h2>
+                <p>Here's a student across three semesters, showing how each semester's GPA compares to the running
+                    CGPA:</p>
+                <table>
+                    <thead><tr><th scope="col">Term</th><th scope="col">Credits</th><th scope="col">Quality Points</th><th scope="col">Semester GPA</th><th scope="col">Cumulative CGPA</th></tr></thead>
+                    <tbody>
+                        <tr><td>Semester 1</td><td>15</td><td>48.0</td><td>3.20</td><td>3.20</td></tr>
+                        <tr><td>Semester 2</td><td>16</td><td>44.8</td><td>2.80</td><td>2.99</td></tr>
+                        <tr><td>Semester 3</td><td>15</td><td>55.5</td><td>3.70</td><td>3.22</td></tr>
+                    </tbody>
+                </table>
+                <p>Notice Semester 2's weaker 2.80 pulled the CGPA down to 2.99 — but Semester 3's strong 3.70 GPA
+                    recovered it back above 3.2. That's the practical value of CGPA: a rough term shows up, but it's
+                    diluted by every other term rather than standing alone. Track both figures with the <a href="/#gpa-calc">GPA calculator</a> as each term ends.</p>
+
+                <h2 id="which-matters">Which one actually matters?</h2>
+                <ul>
+                    <li><strong>Scholarships:</strong> Most renewal requirements are based on cumulative CGPA, not
+                        the most recent semester alone.</li>
+                    <li><strong>Grad school and professional programs:</strong> Admissions committees almost always
+                        request CGPA, sometimes alongside your GPA trend over the final two years to check for
+                        improvement.</li>
+                    <li><strong>Academic probation:</strong> Many institutions trigger probation based on a CGPA
+                        threshold, so a single bad semester GPA might not trigger it if your CGPA stays above the
+                        line.</li>
+                    <li><strong>Dean's List or term honors:</strong> These are usually based on that specific
+                        semester's GPA, not the cumulative figure.</li>
+                </ul>
+
+                <!-- Second ad unit -->
+                <div class="ad-wrap" style="min-height:250px;">
+                    <script>
+                        atOptions = { 'key': '6d924e3634fdbd559dfe94ad25cb16db', 'format': 'iframe', 'height': 250, 'width': 300, 'params': {} };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/6d924e3634fdbd559dfe94ad25cb16db/invoke.js"></script>
+                </div>
+
+                <h2 id="common-confusion">Where people mix them up</h2>
+                <p>The most common error is assuming CGPA is a simple average of each term's GPA — for example,
+                    averaging 3.20, 2.80, and 3.70 to get 3.23. That's close but not exact, because it ignores that
+                    each semester carried a different number of credits. The correct method always works from total
+                    quality points and total credits across all terms, not an average of averages.</p>
+
+                <div class="callout">
+                    <p><strong>Track both automatically.</strong> Enter your courses once and the calculator gives
+                        you semester GPA and running totals without the manual bookkeeping.</p>
+                    <a href="/#gpa-calc" class="btn"><i data-lucide="calculator"></i> Open the GPA Calculator</a>
+                </div>
+
+                <div id="faq">
+                    <h2>FAQ</h2>
+                    <div class="faq-item">
+                        <div class="faq-question">Is CGPA the average of all my GPAs?</div>
+                        <p>Not exactly — it's total quality points across all terms divided by total credits
+                            attempted, which only matches a simple average if every term had identical credit loads.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Which one do employers and grad schools look at?</div>
+                        <p>Most graduate programs and employers request cumulative GPA, though a clear upward trend
+                            in your semester GPA is worth highlighting separately in an application.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can one bad semester ruin my CGPA?</div>
+                        <p>It has less impact on CGPA than it would on a standalone GPA, since it's blended with
+                            every other term — though the effect is larger earlier in a program, when fewer total
+                            credits exist to dilute it.</p>
+                    </div>
+                </div>
+
+                <div class="related-pages">
+                    <a href="/how-to-calculate-gpa.html">How to Calculate GPA<small>Full step-by-step tutorial</small></a>
+                    <a href="/gpa-scale-guide.html">GPA Scale Guide<small>Every scale, side by side</small></a>
+                    <a href="/gpa-guide-nigeria.html">GPA Guide for Nigeria<small>5-point CGPA system explained</small></a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreeGPATool. All rights reserved.</p>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                    <a href="/">Home</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        function applyTheme(theme) {
+            root.setAttribute('data-theme', theme);
+            localStorage.setItem('fgt-theme', theme);
+            if (window.lucide) {
+                themeToggle.innerHTML = theme === 'dark' ? '<i data-lucide="sun"></i>' : '<i data-lucide="moon"></i>';
+                lucide.createIcons();
+            }
+        }
+        applyTheme(localStorage.getItem('fgt-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+        themeToggle.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+    </script>
+</body>
+
+</html>
