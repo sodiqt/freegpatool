@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About FreeGPATool | Free GPA & Grade Calculators</title>
+    <meta name="description" content="FreeGPATool builds free, accurate GPA and grade calculators for students worldwide. Learn who we are, how our calculators work, and our editorial standards.">
+    <link rel="canonical" href="https://freegpatool.vercel.app/about.html" />
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#2451e0">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FreeGPATool">
+    <meta property="og:title" content="About FreeGPATool">
+    <meta property="og:description" content="Free, accurate GPA and grade calculators for students worldwide.">
+    <meta property="og:url" content="https://freegpatool.vercel.app/about.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freegpatool.vercel.app/" },
+            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://freegpatool.vercel.app/about.html" }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --brand-50: #eff4ff; --brand-100: #dbe6fe; --brand-500: #4f7cf7; --brand-600: #2451e0; --brand-700: #1b3fb8;
+            --slate-50: #f8fafc; --slate-200: #e2e8f0; --slate-400: #94a3b8; --slate-600: #475569; --slate-800: #1e293b; --slate-900: #0f172a;
+            --bg: #ffffff; --bg-soft: var(--slate-50); --text: var(--slate-900); --text-soft: var(--slate-600); --border: var(--slate-200); --card-bg: #fff;
+        }
+        html[data-theme="dark"] { --bg:#0b1120; --bg-soft:#111827; --text:#e2e8f0; --text-soft:#94a3b8; --border:#1f2937; --card-bg:#131b2e; --brand-50:#101b33; --brand-100:#16213d; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Outfit', sans-serif; letter-spacing: -0.02em; color: var(--text); }
+        a { color: var(--brand-600); }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+        .skip-link { position: absolute; left: -999px; top: 0; background: var(--brand-600); color: #fff; padding: 0.75rem 1.25rem; z-index: 1000; }
+        .skip-link:focus { left: 0; }
+        header { background: var(--bg); border-bottom: 1px solid var(--border); height: 4rem; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .header-content { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.25rem; }
+        .logo-icon { background: var(--brand-600); color: white; padding: 0.4rem; border-radius: 0.5rem; display: flex; }
+        nav { display: none; }
+        @media (min-width: 900px) { nav { display: flex; gap: 1.75rem; } }
+        nav a { text-decoration: none; color: var(--text-soft); font-size: 0.875rem; font-weight: 500; }
+        nav a:hover { color: var(--brand-600); }
+        .icon-btn { width: 2.5rem; height: 2.5rem; border-radius: 0.75rem; border: 1px solid var(--border); background: var(--bg); color: var(--text-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .breadcrumb { font-size: 0.8125rem; color: var(--text-soft); padding: 1.25rem 0 0; }
+        .breadcrumb a { color: var(--text-soft); text-decoration: none; }
+        article { padding: 1.5rem 0 4rem; }
+        h1 { font-size: clamp(1.9rem, 4vw, 2.5rem); margin: 1rem 0 1rem; }
+        .lede { font-size: 1.125rem; color: var(--text-soft); margin-bottom: 2rem; }
+        h2 { font-size: 1.4rem; margin: 2rem 0 0.9rem; }
+        p { color: var(--text-soft); margin-bottom: 1.15rem; font-size: 1.0625rem; }
+        ul { margin-bottom: 1.15rem; padding-left: 1.5rem; color: var(--text-soft); }
+        li { margin-bottom: 0.55rem; }
+        strong { color: var(--text); }
+        .ad-wrap { display: flex; justify-content: center; margin: 2.5rem 0; min-height: 50px; }
+        .card { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0; }
+        .related-pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .related-pages a { display: block; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: 0.75rem; text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.875rem; }
+        .related-pages a:hover { border-color: var(--brand-500); background: var(--brand-50); }
+        footer { background: var(--slate-900); color: var(--slate-400); padding: 3rem 0 2rem; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .footer-bottom { border-top: 1px solid var(--slate-800); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; }
+        .footer-bottom a { color: inherit; text-decoration: none; }
+        :focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+    </style>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo"><div class="logo-icon"><i data-lucide="graduation-cap"></i></div>FreeGPATool</a>
+            <nav aria-label="Primary">
+                <a href="/#gpa-calc">GPA Calculator</a>
+                <a href="/#grade-calc">Grade Calculator</a>
+                <a href="/how-to-calculate-gpa.html">Guides</a>
+                <a href="/#faq">FAQ</a>
+            </nav>
+            <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i data-lucide="moon"></i></button>
+        </div>
+    </header>
+
+    <p class="breadcrumb container" aria-label="Breadcrumb"><a href="/">Home</a> / About</p>
+
+    <main id="main">
+        <div class="container">
+            <article>
+                <h1>About FreeGPATool</h1>
+                <p class="lede">FreeGPATool exists for one reason: students shouldn't have to do GPA math by hand,
+                    guess at a conversion, or pay for a calculator they'll use for five minutes a semester.</p>
+
+                <div class="ad-wrap">
+                    <script>
+                        atOptions = { 'key': '000a728f6e7d529477c86aaf4ba72f23', 'format': 'iframe', 'height': 50, 'width': 320, 'params': {} };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/000a728f6e7d529477c86aaf4ba72f23/invoke.js"></script>
+                </div>
+
+                <h2>What we build</h2>
+                <p>Every calculator on this site — GPA, CGPA, final grade, and GPA-to-percentage — runs entirely in
+                    your browser. Nothing you type is sent to a server, which is also why your data disappears if
+                    you clear your browser storage rather than living in an account somewhere.</p>
+
+                <h2>How we keep the site free</h2>
+                <p>FreeGPATool is supported by a small number of unobtrusive display ads, not subscriptions or
+                    accounts. We deliberately keep ad placement light so it doesn't get in the way of the tools
+                    themselves.</p>
+
+                <h2>Our editorial approach</h2>
+                <ul>
+                    <li><strong>Worked examples over theory.</strong> Every guide includes at least one full
+                        calculation you can follow along with, not just an abstract formula.</li>
+                    <li><strong>Country-specific accuracy.</strong> We call out where grading scales genuinely
+                        differ — US, UK, Canada, Australia, Nigeria, India — rather than assuming one global
+                        standard.</li>
+                    <li><strong>Honesty about approximations.</strong> Where a conversion (like GPA to percentage)
+                        is inherently approximate, we say so directly instead of presenting it as exact.</li>
+                </ul>
+
+                <div class="card">
+                    <p style="margin-bottom:0;">Have a correction, a grading scale we're missing, or a feature
+                        request? <a href="/contact.html">Get in touch</a> — we read every message.</p>
+                </div>
+
+                <div class="related-pages">
+                    <a href="/">GPA Calculator</a>
+                    <a href="/how-to-calculate-gpa.html">How to Calculate GPA</a>
+                    <a href="/contact.html">Contact</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FreeGPATool. All rights reserved.</p>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                    <a href="/">Home</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        function applyTheme(theme) {
+            root.setAttribute('data-theme', theme);
+            localStorage.setItem('fgt-theme', theme);
+            if (window.lucide) {
+                themeToggle.innerHTML = theme === 'dark' ? '<i data-lucide="sun"></i>' : '<i data-lucide="moon"></i>';
+                lucide.createIcons();
+            }
+        }
+        applyTheme(localStorage.getItem('fgt-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+        themeToggle.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+    </script>
+</body>
+
+</html>
